@@ -79,3 +79,10 @@ test('push delivery rejects SSRF addresses and malformed keys; propagates expiry
   await assert.rejects(sendPush(subscription,{id:'test'},generateKeys(),'https://example.com',{transport:async()=>({status:410,headers:{}})}),e=>e.status===410);
 });
 export {subscription};
+test('new sources establish separate baselines and duplicate portal postings do not alert again',async t=>{
+ const db=await store(t),base=job({city:'수원시',postedAt:'2026-11-01',lastVerifiedAt:stamp(NOW)});
+ await applyCollection(db,result([base]),stamp(NOW));await db.update(s=>{s.subscriptions.one={id:'one',subscription,settings,createdAt:stamp(NOW)};});
+ await applyCollection(db,result([job({id:'srm-new',city:'평택시',postedAt:'2026-11-02'})],{id:'saramin'}),stamp(NOW+1));assert.equal(db.state.outbox.length,0);
+ await applyCollection(db,result([{...base,id:'srm-duplicate'}],{id:'saramin'}),stamp(NOW+2));assert.equal(db.state.outbox.length,0);
+ await applyCollection(db,result([job({id:'srm-really-new',title:'환경안전 담당',city:'화성시',postedAt:'2026-11-11',lastVerifiedAt:stamp(NOW+3)})],{id:'saramin'}),stamp(NOW+3));assert.equal(db.state.outbox.length,1);
+});

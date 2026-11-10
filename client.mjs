@@ -22,11 +22,12 @@ export function initLive({applyFeed,getSettings,applySettings,toast,onNavigate})
     if(loading)return;loading=true;
     try{
       const feed=await api('/api/feed'),signature=JSON.stringify([feed.jobs,feed.companies]);if(signature!==feedSignature){applyFeed(feed);feedSignature=signature;}
-      const source=feed.sources?.[0];
-      if(!source)note.textContent='공고 자동 확인 중 · 기존 자료 '+time(feed.checkedAt)+' 확인';
-      else if(source.status==='error')note.textContent='최신 공고 확인 지연 · '+(feed.lastSuccessAt?'마지막 성공 ':'저장 자료 확인 ')+time(feed.lastSuccessAt||feed.checkedAt)+' · 기존 자료를 표시합니다.';
-      else note.textContent='잡코리아 자동 수집 · '+time(feed.lastSuccessAt)+' 확인 · '+feed.collectionIntervalMinutes+'분마다 확인'+(source.status==='partial'?' · 일부 공고 확인 지연':'')+' · 변경·마감은 원문 확인';
-      document.querySelector('#collection-status').textContent=source?.status==='error'?'최근 수집에 실패했습니다. 다음 주기에 다시 확인합니다.':feed.collecting?'서버가 1시간마다 공고를 확인합니다.':'자동 수집 서버가 중지돼 있습니다.';
+      const sources=feed.sources||[],names=sources.map(s=>s.name).join(' · '),delayed=sources.filter(s=>s.status!=='ok');
+      if(!sources.length)note.textContent='공고 자동 확인 중 · 기존 자료 '+time(feed.checkedAt)+' 확인';
+      else if(sources.every(s=>s.status==='error'))note.textContent='최신 공고 확인 지연 · '+time(feed.lastSuccessAt||feed.checkedAt)+' 확인 자료를 표시합니다.';
+      else note.textContent=names+' · '+time(feed.lastSuccessAt)+' 확인 · '+feed.collectionIntervalMinutes+'분마다 확인'+(delayed.length?' · 일부 공고 확인 지연':'')+' · 변경·마감은 원문 확인';
+      note.title=sources.map(s=>s.name+': '+(s.status==='error'?'연결 지연':(s.accepted??0)+'건 확인')+(s.truncated?' · 나머지는 순차 확인':'')+(s.message?' · '+s.message:'')).join('\n');
+      document.querySelector('#collection-status').textContent=feed.collecting?'서버가 잡코리아·사람인·기업 공식 공고를 1시간마다 확인합니다.':'자동 수집 서버가 중지돼 있습니다.';
     }catch{note.textContent='자동 수집 서버에 연결할 수 없습니다. 마지막 저장 자료를 표시합니다.';document.querySelector('#collection-status').textContent='서버 연결을 확인해 주세요.';}
     finally{loading=false;}
   }
