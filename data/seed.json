@@ -1,0 +1,490 @@
+{
+  "checkedAt": "2026-11-11T00:39:00+09:00",
+  "mode": "verified-snapshot",
+  "jobs": [
+    {
+      "id": "hanmi-133407",
+      "company": "온라인팜",
+      "initial": "온",
+      "type": "중견기업",
+      "title": "안전보건관리자 채용",
+      "region": "서울",
+      "city": "송파구",
+      "exp": "신입·경력",
+      "min": 0,
+      "max": null,
+      "employment": "정규직",
+      "cert": true,
+      "certLabel": "산업안전기사 등 관련 자격 필수",
+      "tags": [
+        "위험성평가",
+        "산업안전기사",
+        "안전보건"
+      ],
+      "postedAt": "2026-11-04",
+      "deadline": "2026-11-12",
+      "deadlineAt": "2026-11-12T23:59:00+09:00",
+      "sourceName": "한미그룹 공식",
+      "sourceUrl": "https://hanmi.recruiter.co.kr/career/jobs/133407",
+      "employeeCount": 407,
+      "employeeCountAsOf": "2026.05.08",
+      "annualRevenueEok": 11366,
+      "revenueYear": 2025,
+      "listingStatus": "unlisted",
+      "companySources": [
+        {
+          "label": "직원·매출·유형: 잡코리아 / NICE",
+          "url": "https://www.jobkorea.co.kr/company/1807265"
+        },
+        {
+          "label": "비상장·복지: 기업 등록 채용공고",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50305300"
+        }
+      ],
+      "tasks": [
+        "현장 안전보건 개선계획과 위험성평가 운영",
+        "안전 매뉴얼 정비 및 사업장 점검·작업 측정"
+      ],
+      "requirements": [
+        "전문학사 이상(졸업예정자 포함), 안전보건 관련 자격 보유",
+        "관련 실무·전공 및 산업위생·대기환경·인간공학 자격 우대"
+      ],
+      "fitNote": "",
+      "factsNote": "채용 법인 온라인팜 기준입니다. 한미약품 또는 한미그룹 전체 수치를 사용하지 않았습니다.",
+      "companyId": "hanmi-133407",
+      "rank": 1,
+      "color": "#f7f9f6",
+      "status": "open",
+      "checkedAt": "2026.11.11",
+      "sourceKind": "posting",
+      "logoUrl": "https://daoift3qrrnil.cloudfront.net/company_groups/images/000/000/234/original/jss_hashed_a9934d70443d6794523c_20261026T131514_%E1%84%8B%E1%85%A9%E1%86%AB%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%91%E1%85%A1%E1%86%B7.png?1792988114="
+    },
+    {
+      "id": "jk-50325964",
+      "company": "이에스디웍",
+      "initial": "E",
+      "type": "중소기업",
+      "title": "환경안전담당 경력 채용",
+      "region": "경기",
+      "city": "화성시",
+      "exp": "경력 3년 이상",
+      "min": 3,
+      "max": null,
+      "employment": "정규직 · 수습 3개월",
+      "cert": true,
+      "certLabel": "환경·안전 자격증 우대",
+      "tags": [
+        "환경안전",
+        "산업안전기사",
+        "위험성평가"
+      ],
+      "postedAt": "2026-11-09",
+      "deadline": "2026-12-09",
+      "sourceName": "잡코리아",
+      "sourceUrl": "https://www.jobkorea.co.kr/Recruit/GI_Read/50325964",
+      "employeeCount": 198,
+      "employeeCountAsOf": "2025.12.31",
+      "annualRevenueEok": 641.1,
+      "revenueYear": 2025,
+      "listingStatus": "unlisted",
+      "companySources": [
+        {
+          "label": "직원·매출·유형: 잡코리아 / NICE",
+          "url": "https://www.jobkorea.co.kr/Recruit/Co_Read/C/43540783"
+        }
+      ],
+      "tasks": [
+        "위험물·대기환경·폐기물 관리와 안전보건 개선",
+        "위험성평가, 환경안전 교육 및 사고 대응계획 운영"
+      ],
+      "requirements": [
+        "학력 제한 없음, 관련 경력 3년 이상",
+        "환경·안전 자격 및 관련 실무 우대"
+      ],
+      "fitNote": "",
+      "factsNote": "직원 수와 매출은 2025년 말 기업정보 기준입니다. 공고 소개문에 남아 있는 과거 수치와 구분했습니다.",
+      "companyId": "jk-50325964",
+      "rank": 2,
+      "color": "#f7f9f6",
+      "status": "open",
+      "checkedAt": "2026.11.11",
+      "sourceKind": "posting",
+      "logoUrl": "https://imgs.jobkorea.co.kr/img1/_whitebg/200X80/Co_Logo/Logo/2024/2/27/JK_CO_bFxsduR24022717462639.png",
+      "deadlineAt": "2026-12-09T23:59:59+09:00"
+    },
+    {
+      "id": "jk-50151432",
+      "company": "동원F&B",
+      "initial": "동",
+      "type": "중견기업",
+      "title": "수원공장 안전·환경 담당 경력직",
+      "region": "경기",
+      "city": "수원시 장안구",
+      "exp": "경력 3년 이상",
+      "min": 3,
+      "max": null,
+      "employment": "비정규직 · 1년 후 전환 심사",
+      "cert": true,
+      "certLabel": "산업안전기사 또는 수질환경기사 우대",
+      "tags": [
+        "산업안전기사",
+        "안전관리",
+        "환경관리"
+      ],
+      "postedAt": "2026-10-12",
+      "deadline": "2026-12-11",
+      "sourceName": "잡코리아",
+      "sourceUrl": "https://www.jobkorea.co.kr/Recruit/GI_Read/50151432",
+      "employeeCount": 3073,
+      "employeeCountAsOf": "기준일 미표기",
+      "annualRevenueEok": 21792.22,
+      "revenueYear": 2025,
+      "listingStatus": "listed",
+      "companySources": [
+        {
+          "label": "직원·매출·분류·상장: 인크루트 / NICE D&B",
+          "url": "https://www.incruit.com/company/1484553"
+        }
+      ],
+      "tasks": [
+        "공장 안전보건 운영, 건강검진과 법정교육 관리",
+        "배출시설·화학물질·폐기물 및 환경 인허가 관리"
+      ],
+      "requirements": [
+        "학사 이상, 경력 3년 이상",
+        "안전·환경 관련 전공 및 산업안전기사·수질환경기사 우대"
+      ],
+      "fitNote": "",
+      "factsNote": "동원에프앤비 법인 기준이며 그룹 전체 매출이 아닙니다. 기업 유형은 인크루트의 중견기업 분류를 따릅니다.",
+      "jobNote": "상단 요약에는 정규직으로 표기되어 있으나 상세 모집요강의 “비정규직, 1년 후 정규직 전환 심사”를 우선 반영했습니다.",
+      "companyId": "jk-50151432",
+      "rank": 3,
+      "color": "#f7f9f6",
+      "status": "open",
+      "checkedAt": "2026.11.11",
+      "sourceKind": "posting",
+      "logoUrl": "https://l.incru.it/2011/06/dwfnb.jpg",
+      "deadlineAt": "2026-12-11T23:59:59+09:00"
+    },
+    {
+      "id": "jk-50230608",
+      "company": "현대성우캐스팅",
+      "initial": "현",
+      "type": "중견기업",
+      "title": "충주공장 사업장 안전관리",
+      "region": "충북",
+      "city": "충주시",
+      "exp": "제조업 안전관리 4년 이상",
+      "min": 4,
+      "max": null,
+      "employment": "고용형태 원문 확인",
+      "cert": true,
+      "certLabel": "산업안전기사 우대",
+      "tags": [
+        "산업안전기사",
+        "ISO 45001",
+        "안전관리"
+      ],
+      "postedAt": "2026-10-21",
+      "deadline": "2026-11-30",
+      "deadlineAt": "2026-11-30T23:59:59+09:00",
+      "sourceName": "잡코리아",
+      "sourceUrl": "https://www.jobkorea.co.kr/Recruit/GI_Read/50230608",
+      "employeeCount": 840,
+      "employeeCountAsOf": "2026.04.08",
+      "annualRevenueEok": 7686.5,
+      "revenueYear": 2025,
+      "listingStatus": "unknown",
+      "companySources": [
+        {
+          "label": "법인 규모·유형: 잡코리아 / NICE",
+          "url": "https://www.jobkorea.co.kr/company/42259605"
+        }
+      ],
+      "tasks": [
+        "사업장 안전점검, 협력사·도급작업 관리",
+        "ISO 45001 및 안전보건경영시스템 운영, 관공서 대응"
+      ],
+      "requirements": [
+        "전문학사 이상, 자동차 부품 또는 제조업 안전관리 경력 4년 이상",
+        "관련 자격·전공, 협력사 관리 및 경영시스템 경험 우대"
+      ],
+      "fitNote": "제조업 경력 인정 확인",
+      "factsNote": "공고의 간이 기업정보와 수치가 달라, 현대성우캐스팅 법인의 기업정보(2026.04.08 직원 수)를 사용했습니다. 공장 단독 인원은 아닙니다.",
+      "jobNote": "공단 경력이 필수 제조업 경력으로 인정되는지는 채용 담당자 확인이 필요합니다. 채용 시 조기 마감할 수 있습니다.",
+      "companyId": "jk-50230608",
+      "rank": 4,
+      "color": "#f7f9f6",
+      "status": "open",
+      "checkedAt": "2026.11.11",
+      "sourceKind": "posting",
+      "logoUrl": "https://cdn.back.dmand.co.kr/companies/1210/logo.png"
+    },
+    {
+      "id": "jk-50250325",
+      "company": "이수페타시스",
+      "initial": "ISU",
+      "type": "중견기업",
+      "title": "환경안전팀 경력사원",
+      "region": "대구",
+      "city": "달성군",
+      "exp": "관련 경력 3~5년",
+      "min": 3,
+      "max": 5,
+      "employment": "고용형태 원문 확인",
+      "cert": true,
+      "certLabel": "수질·대기환경기사 모두 필수",
+      "tags": [
+        "산업안전기사 우대",
+        "수질환경기사",
+        "대기환경기사"
+      ],
+      "postedAt": "2026-09-27",
+      "deadline": "2026-11-26",
+      "sourceName": "잡코리아",
+      "sourceUrl": "https://www.jobkorea.co.kr/Recruit/GI_Read/50250325",
+      "employeeCount": 1445,
+      "employeeCountAsOf": "2026.06.30",
+      "annualRevenueEok": 9296.6,
+      "revenueYear": 2025,
+      "listingStatus": "listed",
+      "companySources": [
+        {
+          "label": "직원·매출·유형: 잡코리아 / NICE",
+          "url": "https://www.jobkorea.co.kr/company/1599570/"
+        },
+        {
+          "label": "코스피·모집요건: 기업 등록 공고",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50250325"
+        }
+      ],
+      "tasks": [
+        "6공장의 환경·안전·보건·소방 관리",
+        "환경 관련 대관업무 및 고객사 ESG 대응"
+      ],
+      "requirements": [
+        "관련 경력 3~5년, 학사 이상",
+        "수질환경기사와 대기환경기사 동시 보유 필수",
+        "산업안전기사 및 통합환경허가 경험 우대"
+      ],
+      "fitNote": "추가 자격증 필요",
+      "factsNote": "이수페타시스 법인 기업정보 기준입니다.",
+      "jobNote": "7년 경력은 명시된 3~5년 범위를 벗어나며, 산업안전기사만으로 필수 자격이 충족되지 않습니다. 채용 시 조기 마감할 수 있습니다.",
+      "companyId": "jk-50250325",
+      "rank": 5,
+      "color": "#f7f9f6",
+      "status": "open",
+      "checkedAt": "2026.11.11",
+      "sourceKind": "posting",
+      "logoUrl": "https://www.petasys.com/kor/images/common/logo.jpg",
+      "deadlineAt": "2026-11-26T23:59:59+09:00"
+    }
+  ],
+  "companies": [
+    {
+      "id": "hanmi-133407",
+      "company": "온라인팜",
+      "logoUrl": "https://daoift3qrrnil.cloudfront.net/company_groups/images/000/000/234/original/jss_hashed_a9934d70443d6794523c_20261026T131514_%E1%84%8B%E1%85%A9%E1%86%AB%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%91%E1%85%A1%E1%86%B7.png?1792988114=",
+      "pay": "면접 후 결정",
+      "paySource": {
+        "label": "채용공고 급여 안내",
+        "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50305300"
+      },
+      "salary": 7298,
+      "salaryYear": "2026",
+      "salarySource": {
+        "label": "인크루트 연봉정보",
+        "url": "https://www.incruit.com/company/16243230/salary"
+      },
+      "salaryNote": "공공데이터·기업 공시·자체 수집 자료 등을 바탕으로 한 참고치입니다. 직군·연차와 성과급 포함 범위가 달라 7년차 안전보건 직무의 제시 연봉을 뜻하지 않습니다.",
+      "benefitSource": {
+        "label": "기업 등록 공고의 복리후생",
+        "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50305300"
+      },
+      "benefitKind": "공고 기재",
+      "benefits": [
+        {
+          "label": "복지포인트",
+          "text": "선택적 복지포인트"
+        },
+        {
+          "label": "가족 의료비",
+          "text": "가족 의료비 지원"
+        },
+        {
+          "label": "휴식",
+          "text": "패밀리데이·리프레시 휴가"
+        }
+      ],
+      "checkedAt": "2026.11.11",
+      "tags": [
+        {
+          "label": "복지포인트"
+        },
+        {
+          "label": "가족 의료비"
+        },
+        {
+          "label": "휴식"
+        }
+      ]
+    },
+    {
+      "id": "jk-50325964",
+      "company": "이에스디웍",
+      "logoUrl": "https://imgs.jobkorea.co.kr/img1/_whitebg/200X80/Co_Logo/Logo/2024/2/27/JK_CO_bFxsduR24022717462639.png",
+      "pay": "3,600~5,000만원",
+      "paySource": {
+        "label": "모집 공고의 제시 연봉",
+        "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50325964"
+      },
+      "payNote": "면접 후 결정. 수습 3개월이며 기본급·성과급 구성은 공고에 별도 명시되지 않았습니다.",
+      "salary": null,
+      "benefitSource": {
+        "label": "기업 등록 공고의 복리후생",
+        "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50325964"
+      },
+      "benefitKind": "공고 기재",
+      "benefits": [
+        {
+          "label": "식사 지원",
+          "text": "구내식당·점심 식사 지원"
+        },
+        {
+          "label": "기숙사",
+          "text": "기숙사 지원"
+        },
+        {
+          "label": "휴식",
+          "text": "리프레시 휴가"
+        }
+      ],
+      "checkedAt": "2026.11.11",
+      "tags": [
+        {
+          "label": "식사 지원"
+        },
+        {
+          "label": "기숙사"
+        },
+        {
+          "label": "휴식"
+        }
+      ]
+    },
+    {
+      "id": "jk-50151432",
+      "company": "동원F&B",
+      "logoUrl": "https://l.incru.it/2011/06/dwfnb.jpg",
+      "pay": "회사 내규",
+      "paySource": {
+        "label": "채용공고 급여 안내",
+        "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50151432"
+      },
+      "salary": null,
+      "benefitSource": {
+        "label": "인크루트 기업 복리후생",
+        "url": "https://www.incruit.com/company/1484553"
+      },
+      "benefitKind": "기업정보",
+      "benefits": [
+        {
+          "label": "자녀 학자금",
+          "text": "초등·중등 자녀 학자금 지원 안내"
+        }
+      ],
+      "benefitNote": "기업 공통 안내이며 수원공장 비정규직 적용 여부·지원 금액은 미확인입니다.",
+      "checkedAt": "2026.11.11",
+      "tags": [
+        {
+          "label": "자녀 학자금"
+        }
+      ]
+    },
+    {
+      "id": "jk-50230608",
+      "company": "현대성우캐스팅",
+      "logoUrl": "https://cdn.back.dmand.co.kr/companies/1210/logo.png",
+      "pay": "회사 내규",
+      "paySource": {
+        "label": "채용공고 급여 안내",
+        "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50230608"
+      },
+      "salary": null,
+      "benefitSource": {
+        "label": "디맨드의 해당 공고 복리후생",
+        "url": "https://www.dmand.co.kr/jd/detail/226948"
+      },
+      "benefitKind": "채용정보",
+      "benefits": [
+        {
+          "label": "주거 지원",
+          "text": "기숙사·주택자금 융자 안내"
+        },
+        {
+          "label": "자녀 학자금",
+          "text": "자녀 학자금 지원 안내"
+        },
+        {
+          "label": "통근버스",
+          "text": "통근버스 운영 안내"
+        }
+      ],
+      "benefitNote": "제3자 채용정보의 안내입니다. 충주공장·채용 직무에 적용되는 조건은 원문 및 담당자 확인이 필요합니다.",
+      "checkedAt": "2026.11.11",
+      "tags": [
+        {
+          "label": "주거 지원"
+        },
+        {
+          "label": "자녀 학자금"
+        },
+        {
+          "label": "통근버스"
+        }
+      ]
+    },
+    {
+      "id": "jk-50250325",
+      "company": "이수페타시스",
+      "logoUrl": "https://www.petasys.com/kor/images/common/logo.jpg",
+      "pay": "회사 내규",
+      "paySource": {
+        "label": "채용공고 급여 안내",
+        "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50250325"
+      },
+      "salary": null,
+      "benefitSource": {
+        "label": "회사 공식 복리후생",
+        "url": "https://www.petasys.com/kor/recruit/recruit02.jsp"
+      },
+      "benefitKind": "회사 공식",
+      "benefits": [
+        {
+          "label": "기숙사·통근",
+          "text": "기숙사 제공 및 통근버스"
+        },
+        {
+          "label": "자녀 학자금",
+          "text": "자녀 학자금과 주택자금 대출"
+        },
+        {
+          "label": "건강검진",
+          "text": "정기·직위·연령별 건강검진"
+        }
+      ],
+      "checkedAt": "2026.11.11",
+      "tags": [
+        {
+          "label": "기숙사·통근"
+        },
+        {
+          "label": "자녀 학자금"
+        },
+        {
+          "label": "건강검진"
+        }
+      ]
+    }
+  ]
+}

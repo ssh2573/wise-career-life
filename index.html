@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#275b43"><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg" type="image/svg+xml"><title>슬기로운 이직생활</title><style>
+:root{--ink:#202923;--muted:#707971;--line:#e2e6e1;--green:#275b43;--soft:#eef4ee}*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font:14px/1.6 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;letter-spacing:-.25px}button,input,select{font:inherit;color:inherit}button{cursor:pointer;touch-action:manipulation}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #508965;outline-offset:3px}svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}.hidden{display:none!important}.shell{max-width:1040px;padding:0 32px 60px;margin:auto}.header{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line)}.brand{font-size:21px;font-weight:750;letter-spacing:-.7px}.header nav{display:flex;align-items:center;gap:6px}.nav-item{border:0;background:none;padding:9px 13px;font-size:14px;color:var(--muted);border-radius:6px;display:flex;align-items:center;gap:7px}.nav-item.active{background:var(--soft);color:var(--green);font-weight:650}.count{font-size:12px;color:var(--green);font-variant-numeric:tabular-nums}.draft-note{margin:17px 0 23px;font-size:12px;color:#7b7d70}.draft-note span{color:#7c704b;font-weight:600}.filters{padding-bottom:22px;border-bottom:1px solid var(--line)}.search{display:flex;align-items:center;gap:10px;border:1px solid #dce2db;border-radius:7px;padding:11px 14px;max-width:100%;margin-bottom:18px;background:#fafbf9;color:#90988e}.search input{border:0;outline:0;background:none;width:100%;font-size:14px}.search input::placeholder{color:#92998f}.filter-row{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin:10px 0 0}.filter-label{font-size:12px;color:var(--muted);width:50px;flex-shrink:0}.chip{border:1px solid var(--line);background:#fff;border-radius:5px;padding:5px 11px;font-size:12px;color:#697367}.chip.active{background:var(--soft);border-color:#86a68b;color:var(--green)}.reset{border:0;background:none;color:#828b7d;font-size:12px;margin-left:auto;padding:5px 0 5px 10px}.filter-break{height:15px;width:1px;background:var(--line);margin:0 6px}.results-line{display:flex;justify-content:space-between;align-items:center;margin:21px 0 3px}.results-line h1{font-size:15px;margin:0;font-weight:650}.results-line b{color:var(--green);margin-left:5px;font-variant-numeric:tabular-nums}.results-line select{font-size:12px;color:#697366;border:0;background:#fff;padding:6px 0 6px 8px}.jobs{display:flex;flex-direction:column}.job-card{display:flex;justify-content:space-between;gap:22px;padding:24px 0;border-bottom:1px solid var(--line)}.job-info{min-width:0}.company-name{font-size:13px;color:#666f61;display:flex;align-items:center;gap:10px}.company-name span{font-size:11px;color:#92988c}.job-title{font-size:18px;line-height:1.45;letter-spacing:-.5px;margin:5px 0 8px;font-weight:650}.job-title button{font:inherit;color:inherit;padding:0;border:0;background:none;text-align:left}.job-title button:hover{text-decoration:underline;text-underline-offset:4px}.job-meta{display:flex;gap:0;flex-wrap:wrap;font-size:13px;color:#747c6e}.job-meta span+span:before{content:'·';margin:0 8px;color:#b6bdb0}.job-conditions{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:#7f8978;margin-top:8px}.match{color:#467447}.needs-check{color:#967547}.job-actions{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;flex-shrink:0;gap:15px}.deadline{font-size:13px;color:#5e6a55;font-weight:550;font-variant-numeric:tabular-nums}.save{display:flex;gap:5px;align-items:center;justify-content:center;background:white;border:1px solid var(--line);border-radius:5px;color:#7b8870;padding:6px 9px;font-size:12px;min-width:72px}.save.saved{background:var(--soft);color:var(--green);border-color:#a7bda5}.save.saved svg{fill:#dce9d4}.empty{text-align:center;padding:60px 20px}.empty h2{font-size:15px;font-weight:500;color:#6d7a61}.text-button{background:none;border:0;color:var(--green);padding:5px;font-size:13px}.settings{max-width:730px}.settings h1{font-size:21px;margin:0 0 22px;font-weight:650}.setting-card{margin-bottom:27px}.setting-card h2{font-size:14px;margin:0;padding-bottom:13px;border-bottom:1px solid var(--line);color:#5c6b51}.setting-line{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:19px 0;border-bottom:1px solid #edf0e9}.setting-line strong{font-size:14px;font-weight:500}.setting-line small{display:block;color:#89917f;font-size:12px;margin-top:4px}.toggle{width:42px;height:24px;background:#dce2d4;border:0;border-radius:24px;position:relative;flex-shrink:0}.toggle:after{content:'';width:18px;height:18px;position:absolute;top:3px;left:3px;background:#fff;border-radius:50%;transition:left .12s}.toggle.on{background:#547c45}.toggle.on:after{left:21px}.select-input{font-size:13px;border:1px solid var(--line);background:#fff;border-radius:5px;padding:7px 10px}.settings-actions{display:flex;justify-content:flex-end}.primary{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:6px;background:var(--green);color:white;padding:10px 17px;font-size:13px}.setting-note{font-size:12px;color:#87917e;margin:18px 0 0}.icon-button{border:0;background:transparent;width:32px;height:32px;display:grid;place-items:center;border-radius:5px;color:#839078}.icon-button:hover{background:#f1f4ed}dialog{border:1px solid var(--line);border-radius:12px;padding:0;width:calc(100% - 32px);max-width:600px;color:var(--ink);box-shadow:0 20px 80px #142c2526}dialog::backdrop{background:#25352d66}.modal-inner{padding:24px 28px}.modal-top{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#8d957f;margin-bottom:15px}.modal-company{font-size:13px;color:#79866b;margin:0}.modal-inner h2{font-size:23px;line-height:1.5;margin:5px 0 20px;letter-spacing:-.6px}.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;padding:15px;background:#f6f8f2;border-radius:5px;color:#76866a}.modal-grid b{font-weight:500;margin-right:8px;color:#536c42}.modal-inner h3{font-size:14px;margin:25px 0 8px}.modal-inner ul{padding-left:18px;font-size:13px;line-height:1.9;color:#758269;margin:0}.modal-footer{display:flex;justify-content:flex-end;padding:16px 28px;border-top:1px solid var(--line)}.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,12px);border-radius:7px;padding:11px 17px;background:#2b4735;color:#fff;font-size:12px;box-shadow:0 5px 20px #0002;opacity:0;pointer-events:none;z-index:50;max-width:calc(100% - 30px);transition:opacity .15s,transform .15s}.toast.visible{opacity:1;transform:translate(-50%,0)}@media(max-width:650px){.shell{padding:0 18px 40px}.header{display:block;padding-top:20px}.brand{font-size:20px}.header nav{margin-top:13px;gap:9px}.nav-item{padding:10px 10px;border-radius:5px 5px 0 0;font-size:13px}.draft-note{font-size:11px;line-height:1.7;margin:14px 0 18px}.search{padding:10px 12px}.search input{font-size:13px}.filter-row{gap:6px}.filter-label{width:34px;font-size:11px}.chip{font-size:11px;padding:5px 8px}.filter-break{margin:0 2px}.reset{font-size:11px}.job-card{padding:20px 0;gap:12px}.job-title{font-size:16px;letter-spacing:-.4px}.company-name{font-size:12px;gap:7px}.company-name span{font-size:10px}.job-meta{font-size:12px}.job-conditions{font-size:11px;gap:6px 10px}.job-actions{gap:12px}.save{min-width:35px;padding:7px}.save span{display:none}.deadline{font-size:12px}.results-line h1{font-size:14px}.results-line select{font-size:11px}.setting-line{gap:15px}.setting-line strong{font-size:13px}.setting-line small{font-size:11px}.setting-line .filter-row{max-width:160px;justify-content:flex-end}.modal-inner{padding:19px}.modal-inner h2{font-size:20px}.modal-grid{grid-template-columns:1fr;gap:7px}.modal-footer{padding:15px 19px}.toast{font-size:11px;text-align:center;width:max-content}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.job-card{display:grid;grid-template-columns:56px minmax(0,1fr) auto;column-gap:17px}
+.company-logo{width:54px;height:54px;border:1px solid #e2e7df;border-radius:8px;background:#fafbf9;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;color:#577450;font-size:22px;font-weight:700;letter-spacing:-.5px}
+.company-logo img{display:block;width:100%;height:100%;object-fit:contain;padding:6px;background:#fff}
+.company-logo .logo-fallback{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+.job-actions{gap:12px}.action-buttons{display:flex;align-items:center;gap:7px}.source-button{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:7px 11px;border:1px solid #c3d3c0;border-radius:5px;background:var(--soft);color:var(--green);font-size:12px;white-space:nowrap;line-height:1.5}.source-button:hover{background:#e2eddf;border-color:#90ac88}.source-button svg{width:14px;height:14px}.save{min-height:34px}.source-caption{font-size:11px;color:#87917f;text-align:right;margin-top:5px}.modal-company-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}.modal-company-row .company-logo{width:44px;height:44px;font-size:19px}.modal-footer{gap:10px;align-items:center;justify-content:space-between}.modal-footer .primary.secondary{background:#fff;border:1px solid var(--line);color:#68775e}.modal-footer .source-button{padding:10px 14px;font-size:13px}
+@media(max-width:650px){.job-card{grid-template-columns:42px minmax(0,1fr);column-gap:12px;row-gap:13px}.company-logo{width:42px;height:42px;border-radius:6px;font-size:19px}.job-actions{grid-column:2;flex-direction:row;align-items:center;justify-content:space-between;gap:10px}.source-button{font-size:11px;padding:7px 9px}.source-caption{font-size:10px}.modal-footer{gap:8px;flex-wrap:wrap}.modal-footer .source-button,.modal-footer .primary{font-size:12px;padding:9px 11px}}
+
+.region-summary{font-size:12px;color:var(--muted)}.region-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:20px 0}.region-grid .chip{padding:10px 5px}.region-presets{display:flex;gap:8px}.region-modal h2{margin-bottom:5px}.info-note{font-size:12px;color:var(--muted);margin:10px 0;line-height:1.8}.reference{font-size:12px;color:var(--green);text-decoration:underline;text-underline-offset:3px}.evidence-tag{display:inline-block;background:var(--soft);color:var(--green);font-size:10px;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle}.evidence-tag.secondary{background:#f6f2e8;color:#8a703c}.company-card{display:grid;grid-template-columns:54px minmax(0,1fr) auto;gap:17px;padding:25px 0;border-bottom:1px solid var(--line)}.company-card h2{margin:0 0 7px;font-size:18px}.company-card h2 button{font:inherit;border:0;background:none;padding:0;text-align:left}.company-card h2 button:hover{text-decoration:underline;text-underline-offset:4px}.company-sub{font-size:12px;color:var(--muted)}.benefit-tags{font-size:12px;color:#547052;margin-top:8px;line-height:1.8}.salary-preview{text-align:right;align-self:center}.salary-preview small{display:block;font-size:11px;color:var(--muted)}.salary-preview strong{font-size:20px;font-weight:650;display:block;margin:3px 0}.salary-preview .text-button{padding:5px 0;font-size:12px}.salary-panel{background:#f5f8f3;border:1px solid #e5ebe1;padding:17px;border-radius:6px;margin:15px 0}.salary-panel .salary-amount{font-size:27px;font-weight:650;margin:2px 0 9px}.salary-label{font-size:12px;color:#65745b}.salary-panel p{margin:5px 0;font-size:12px;color:#75816c}.salary-panel .reference{display:inline-block;margin-top:7px}.benefit-list{margin:0}.benefit-item{padding:11px 0;border-bottom:1px solid #eef0eb;display:grid;grid-template-columns:90px minmax(0,1fr);gap:8px;font-size:13px}.benefit-item dt{color:#596951}.benefit-item dd{margin:0;color:#737e6c}.evidence-note{font-size:11px;color:#87907e;line-height:1.8;margin:12px 0}.empty-info{font-size:13px;color:#758269;margin:0}.primary:disabled{opacity:.4;cursor:not-allowed}.header nav{flex-wrap:wrap}.modal-inner h3 small{font-size:11px;font-weight:400;color:#84907b}.modal-inner .profile-heading{margin:0;font-size:21px}.profile-footer{justify-content:flex-start}.profile-footer a{font-size:12px}.company-logo .logo-fallback{font-size:18px}
+@media(max-width:650px){.header nav{gap:0;justify-content:space-between}.nav-item{font-size:12px;padding:10px 7px}.company-card{grid-template-columns:42px minmax(0,1fr);gap:12px}.company-card h2{font-size:16px}.salary-preview{grid-column:2;text-align:left;border-top:1px solid #f0f2ed;padding-top:10px;display:grid;grid-template-columns:1fr auto;gap:2px 10px}.salary-preview strong{font-size:19px;grid-column:1}.salary-preview button{grid-column:2;grid-row:1 / 4}.region-grid{grid-template-columns:repeat(4,1fr)}.benefit-item{grid-template-columns:76px minmax(0,1fr)}.salary-panel .salary-amount{font-size:24px}.region-summary{font-size:11px}.company-card .company-logo{width:42px;height:42px}.setting-line #alert-regions{max-width:240px}}
+
+.company-filter-row{margin-top:14px}.company-filter-row .select-input{padding:5px 10px;font-size:12px;min-width:130px}.listing-filter-label{font-size:12px;color:var(--muted);margin-left:15px;margin-right:3px}.company-facts{font-size:12px;margin-top:6px;color:#53694c}.setting-line>label{font-size:14px}
+@media(max-width:650px){.company-filter-row .select-input{min-width:0;width:104px;font-size:11px;padding:6px 5px}.listing-filter-label{font-size:11px;margin-left:6px;margin-right:0}.company-facts{font-size:11px}.setting-line>label{font-size:13px}}
+@media(max-width:350px){.company-filter-row{column-gap:5px}.company-filter-row .select-input{width:92px}.listing-filter-label{margin-left:0}}
+
+.setting-line .alert-types{max-width:none;justify-content:flex-end;flex-wrap:wrap}
+@media(max-width:650px){#type-filters .filter-label{width:44px}.setting-line .alert-types{max-width:260px}}
+
+.scale-filter-group{display:flex;gap:12px;align-items:flex-start;margin-top:13px}.scale-filter-label{width:57px;flex-shrink:0;font-size:12px;color:#586651;padding-top:6px}.scale-options{display:flex;flex-wrap:wrap;gap:6px;min-width:0}.scale-options .chip{padding:5px 10px}.scale-options .chip.active{background:#275b43;color:white;border-color:#275b43;font-weight:600}.extra-filters{margin-top:17px;border-top:1px solid #edf0ea;padding-top:12px}.extra-filters summary{cursor:pointer;font-size:12px;color:#687561;width:fit-content}.extra-filters summary span{font-size:11px;margin-left:12px;color:#8a9384}.extra-filters[open] summary{margin-bottom:13px}.extra-filters .filter-label{width:57px}.filters{padding-bottom:17px}.company-scale{display:grid;grid-template-columns:1fr 1.15fr 1fr;margin:0;background:#f5f8f3;border:1px solid #e7ede2;border-radius:7px;padding:13px 0;grid-column:2 / -1;gap:0}.company-scale>div{padding:0 16px;min-width:0}.company-scale>div+div{border-left:1px solid #dfe7da}.company-scale dt{font-size:11px;color:#73816a;line-height:1.4}.company-scale dd{margin:4px 0 2px;font-size:20px;line-height:1.4;font-weight:650;letter-spacing:-.4px;color:#2f4f36;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.company-scale small{font-size:10px;color:#929b8a;display:block;line-height:1.5}.job-card{grid-template-columns:54px minmax(0,1fr);row-gap:13px;column-gap:17px;padding:23px 0}.job-card>.company-logo{grid-column:1;grid-row:1}.job-info{grid-column:2}.job-actions{grid-column:2;flex-direction:row;align-items:center;justify-content:space-between;gap:10px}.job-actions>div{display:flex;align-items:center;gap:10px}.job-actions .source-caption{margin:0;font-size:10px}.company-name{font-size:15px;font-weight:600;color:#31422d;flex-wrap:wrap;gap:5px 9px}.company-name span{font-weight:400;color:#8d9783}.job-title{font-size:17px;margin:3px 0 5px;font-weight:500}.job-conditions{margin-top:5px}.modal-inner .company-scale{margin-bottom:15px}.modal-inner .company-scale dd{font-size:18px}
+@media(max-width:650px){.scale-filter-group{gap:8px;margin-top:13px}.scale-filter-label{width:44px;font-size:11px}.scale-options{gap:5px}.scale-options .chip{font-size:11px;padding:5px 8px}.extra-filters summary span{margin-left:7px}.job-card{grid-template-columns:42px minmax(0,1fr);column-gap:12px;row-gap:11px}.job-card .company-scale{grid-column:1 / -1}.company-scale>div{padding:0 9px}.company-scale dd{font-size:17px}.company-scale small{font-size:9px}.company-scale{padding:11px 0}.company-name{font-size:14px}.job-title{font-size:15px}.job-actions{grid-column:1 / -1}.job-actions .source-caption{display:none}.modal-inner .company-scale dd{font-size:16px}.job-actions>div{gap:0}}
+@media(max-width:380px){.scale-filter-group{display:block}.scale-filter-label{display:block;width:auto;padding:0 0 7px}.company-scale dd{font-size:15px}.company-scale small{font-size:8px}.extra-filters summary span{display:inline-block;max-width:200px;vertical-align:top}}
+.company-badges{display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin-top:9px}.company-badge{display:inline-block;border:1px solid #e5e8e2;border-radius:4px;background:#f8f9f7;padding:2px 7px;color:#70796b;font-size:11px;font-weight:400;line-height:1.6;white-space:nowrap;font-variant-numeric:tabular-nums}
+@media(max-width:650px){.company-badges{gap:4px;margin-top:8px}.company-badge{font-size:10px;padding:2px 6px}}
+
+.company-card{grid-template-columns:54px minmax(0,1fr);padding:23px 0}.company-card-heading{display:flex;align-items:baseline;justify-content:space-between;gap:8px}.company-card-heading h2{margin:0 0 3px}.company-card-heading>.text-button{flex-shrink:0;padding:0;font-size:11px}.profile-badges{display:flex;align-items:center;flex-wrap:wrap;gap:5px;margin-top:9px}.profile-badge{display:inline-flex;align-items:center;gap:6px;padding:3px 8px;border:1px solid #e3e8df;border-radius:4px;background:#f7f9f5;color:#586c50;font-size:11px;font-weight:400;line-height:1.6}.profile-badge small{font-size:10px;color:#79816f;padding-left:6px;border-left:1px solid #dce2d5}.profile-badge.salary{background:#eef4ee;border-color:#dce7dc;color:#315d41;font-variant-numeric:tabular-nums}.profile-badge.salary strong{font-size:12px;font-weight:550}.badge-source{font-size:10px;color:#7c8475}.profile-badges.benefits{margin-top:7px}.badge-label{font-size:11px;color:#7b8574;margin-right:2px}
+@media(max-width:650px){.company-card{grid-template-columns:42px minmax(0,1fr);gap:12px}.company-card-heading{align-items:flex-start}.company-card-heading>.text-button{font-size:10px;padding-top:2px}.profile-badges{gap:4px}.profile-badge{padding:2px 6px}.profile-badge.salary strong{font-size:11px}.profile-badge small{font-size:9px}.badge-source{font-size:10px}}
+
+.job-compensation{margin-top:9px}.job-compensation .profile-badges:first-child{margin-top:0}.job-benefit-details{margin-top:8px}.job-benefit-details>summary{cursor:pointer;width:fit-content;color:#526c4e;font-size:11px;padding:3px 0}.job-benefit-details[open]>summary{margin-bottom:9px}.inline-evidence{border-left:2px solid #e2e9de;padding:0 0 0 12px;max-width:680px}.inline-evidence h3{font-size:12px;font-weight:600;margin:16px 0 3px}.inline-evidence .benefit-item{font-size:12px;grid-template-columns:76px minmax(0,1fr);padding:8px 0}.inline-evidence .info-note{font-size:11px;margin:0 0 8px}.inline-evidence .info-note strong{font-weight:500;color:#4d6346}.inline-evidence .reference{font-size:11px;overflow-wrap:anywhere}.inline-evidence .evidence-note{font-size:10px}.compensation-empty{margin-top:6px}.compensation-empty .company-badge{background:transparent;color:#8b9284;border-color:#ebeee7}.job-compensation .profile-badge{font-size:11px}.job-info .profile-badge.salary strong{font-size:11px}.job-card .profile-badges{gap:4px}
+@media(max-width:650px){.header nav{justify-content:flex-start;gap:13px}.nav-item{padding-left:10px;padding-right:10px}.job-compensation .profile-badge{font-size:10px}.job-benefit-details>summary{padding:7px 0;font-size:11px}.inline-evidence{padding-left:9px}.inline-evidence .benefit-item{grid-template-columns:60px minmax(0,1fr);font-size:11px}.job-compensation .badge-source{display:block;font-size:10px}.job-info .profile-badge.salary strong{font-size:11px}}
+
+
+.filters{border-bottom:0;padding-bottom:0}.filters .search{margin-bottom:14px}.filter-box{border:1px solid #dce3d8;border-radius:8px;background:#fff}.filter-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 16px;background:#f7f9f5;border-radius:8px 8px 0 0}.filter-heading{display:flex;align-items:center;gap:8px;margin:0;font-size:13px;font-weight:650;color:#354b35}.filter-heading svg{width:16px;height:16px;color:#6e8065}.filter-actions{display:flex;align-items:center;gap:10px}.filter-toolbar .reset{margin:0;padding:4px 2px;font-size:11px;color:#7a8372;min-height:32px}.filter-action-divider{width:1px;height:13px;background:#dce3d7}.filter-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;background:transparent;border-radius:4px;padding:4px 7px;font-size:12px;font-weight:500;color:#38583a;min-height:32px}.filter-toggle:hover{background:#eaf0e5}.filter-toggle svg{width:14px;height:14px;stroke-width:1.8}.filter-toggle[aria-expanded="true"] .toggle-vertical{display:none}.filter-summary{margin:0;padding:10px 16px 13px;color:#707c68;font-size:11px;line-height:1.8;overflow-wrap:anywhere}.filter-box[data-expanded="true"] .filter-toolbar{border-bottom:1px solid #e5eae1}#filter-panel{padding:16px}#filter-panel>#region-filters{margin-top:0}#filter-panel[hidden],.filter-summary[hidden]{display:none}
+@media(max-width:650px){.filter-toolbar{padding:8px 12px;gap:8px}.filter-actions{gap:6px}.filter-heading{font-size:13px;gap:6px}.filter-toggle{min-height:36px;padding:5px 4px}.filter-toolbar .reset{min-height:36px}.filter-summary{padding:9px 12px 12px;font-size:11px}#filter-panel{padding:14px 12px}.filters .search{margin-bottom:12px}}
+
+.minimum-note{margin:10px 15px 0;font-size:11px;color:#63705e}.minimum-note b{font-weight:600}.filter-summary{margin-top:6px}.job-fit-note{font-size:11px;color:#967547;margin:5px 0 0}.evidence-links{display:flex;flex-wrap:wrap;gap:5px 12px}.company-scale small{overflow-wrap:anywhere}.source-caption{white-space:nowrap}
+#collection-status{margin:-8px 0 25px}.toggle:disabled{cursor:default;opacity:.65}.text-button:disabled{cursor:default;opacity:.45}
+</style></head><body>
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><defs>
+<symbol id="radar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5V12l6-6M12 8a4 4 0 1 0 4 4"/><circle cx="12" cy="12" r="1"/></symbol><symbol id="grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol><symbol id="bookmark" viewBox="0 0 24 24"><path d="M6 4h12v17l-6-4-6 4V4Z"/></symbol><symbol id="bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol><symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol><symbol id="pin" viewBox="0 0 24 24"><path d="M19 10c0 6-7 11-7 11S5 16 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2"/></symbol><symbol id="case" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 12c5 3 13 3 18 0M12 12v4"/></symbol><symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol><symbol id="shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></symbol><symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol><symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.5"/></symbol><symbol id="spark" viewBox="0 0 24 24"><path d="m12 3 2.8 6.2L21 12l-6.2 2.8L12 21l-2.8-6.2L3 12l6.2-2.8L12 3Z"/></symbol><symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol><symbol id="external" viewBox="0 0 24 24"><path d="M14 3h7v7m0-7L10 14M10 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5"/></symbol></defs></svg>
+
+<div class="shell">
+<header class="header"><a href="#jobs" class="brand" aria-label="슬기로운 이직생활 홈">슬기로운 이직생활</a><nav aria-label="주요 메뉴"><button class="nav-item active" data-view="jobs">채용공고</button><button class="nav-item" data-view="saved">관심공고 <span class="count" id="saved-count">0</span></button><button class="nav-item" data-view="settings">알림 설정</button></nav></header>
+<main><p class="draft-note" id="draft-note"><span>실제 공고</span> · 저장 자료 2026.11.11 확인 · 자동 수집 서버에 연결하고 있습니다.</p>
+<section id="explore-view" aria-label="채용공고 탐색">
+<div class="filters"><label class="search"><svg aria-hidden="true"><use href="#search"/></svg><input id="job-search" aria-label="공고 검색" placeholder="기업명, 직무, 복지 키워드 검색" autocomplete="off"></label>
+<section class="filter-box" id="filter-box" aria-labelledby="filter-heading" data-expanded="false">
+<div class="filter-toolbar"><h2 class="filter-heading" id="filter-heading"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 7h7m4 0h7M3 17h11m4 0h3"/><circle cx="12" cy="7" r="2"/><circle cx="16" cy="17" r="2"/></svg>필터</h2><div class="filter-actions"><button type="button" class="reset" id="reset">전체 초기화</button><span class="filter-action-divider" aria-hidden="true"></span><button type="button" class="filter-toggle" id="filter-toggle" aria-label="필터 펼치기" aria-expanded="false" aria-controls="filter-panel"><span id="filter-toggle-text">펼치기</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14"/><path class="toggle-vertical" d="M12 5v14"/></svg></button></div></div>
+<p class="minimum-note">기본 기준 · 직원 100명 이상 <b>또는</b> 연매출 100억원 이상</p><p class="filter-summary" id="filter-summary"></p>
+<div id="filter-panel" hidden><div class="filter-row" id="region-filters"></div>
+<div class="scale-filter-group"><span class="scale-filter-label" id="employee-label">직원 수</span><div class="scale-options" id="employee-filter" role="group" aria-labelledby="employee-label"></div></div>
+<div class="scale-filter-group"><span class="scale-filter-label" id="revenue-label">연매출</span><div class="scale-options" id="revenue-filter" role="group" aria-labelledby="revenue-label"></div></div>
+<div class="scale-filter-group"><span class="scale-filter-label" id="listing-label">상장 여부</span><div class="scale-options" id="listing-filter" role="group" aria-labelledby="listing-label"></div></div>
+<details class="extra-filters" id="extra-filters"><summary>추가 조건 <span id="extra-filter-summary">기업 유형 · 경력</span></summary>
+<div class="filter-row" id="type-filters"><span class="filter-label">기업 유형</span><button class="chip active" data-type="all" aria-pressed="true">전체</button><button class="chip" data-type="대기업" aria-pressed="false">대기업</button><button class="chip" data-type="중견기업" aria-pressed="false">중견기업</button><button class="chip" data-type="스타트업" aria-pressed="false">스타트업</button><button class="chip" data-type="중소기업" aria-pressed="false">중소기업</button></div>
+<div class="filter-row"><span class="filter-label">경력</span><button class="chip" id="experience-filter" aria-pressed="false">7년 연차 범위 부합</button></div></details></div></section></div>
+<div class="results-line"><h1 id="result-count" aria-live="polite">채용공고 <b>11</b></h1><select id="sort" aria-label="정렬 기준"><option value="match">조건 부합순</option><option value="new">최신순</option><option value="deadline">마감 임박순</option><option value="employees">직원 수 많은순</option><option value="revenue">연매출 높은순</option></select></div>
+<div id="jobs" class="jobs"></div></section>
+<section id="settings-view" class="settings hidden"><h1>알림 설정</h1><div class="setting-card"><h2>브라우저 알림</h2><div class="setting-line"><div><strong>새 공고 알림</strong><small id="notification-status" role="status">알림 연결 상태를 확인하고 있습니다.</small></div><button class="toggle" id="notify-toggle" role="switch" aria-checked="false" aria-label="새 공고 알림"></button></div><div class="setting-line"><strong>알림 묶음 주기</strong><select class="select-input" id="cadence" aria-label="알림 묶음 주기"><option value="hourly">1시간마다</option><option value="3hours">3시간마다</option><option value="daily">하루 1번</option></select></div></div>
+<p class="setting-note" id="collection-status" role="status">자동 수집 상태를 확인하고 있습니다.</p><div class="setting-card"><h2>알림 조건</h2><p class="info-note">기본 기준: 직원 100명 이상 또는 연매출 100억원 이상</p><div class="setting-line"><strong>기업 유형</strong><div class="filter-row alert-types" style="margin:0"><button class="chip active" data-alert-type="all" aria-pressed="true">전체</button><button class="chip" data-alert-type="대기업" aria-pressed="false">대기업</button><button class="chip" data-alert-type="중견기업" aria-pressed="false">중견기업</button><button class="chip" data-alert-type="스타트업" aria-pressed="false">스타트업</button><button class="chip" data-alert-type="중소기업" aria-pressed="false">중소기업</button></div></div><div class="setting-line"><strong>근무 지역</strong><div class="filter-row" style="margin:0" id="alert-regions"></div></div><div class="setting-line"><label for="alert-employee-filter">직원 수</label><select class="select-input" id="alert-employee-filter" aria-label="알림 직원 수"></select></div><div class="setting-line"><label for="alert-revenue-filter">연매출</label><select class="select-input" id="alert-revenue-filter" aria-label="알림 연매출"></select></div><div class="setting-line"><label for="alert-listing-filter">상장 여부</label><select class="select-input" id="alert-listing-filter" aria-label="알림 상장 여부"></select></div><div class="setting-line"><div><strong>연차·자격증 기준 부합 공고만</strong><small>경력 7년차 / 산업안전기사 · 세부 조건 미확인 공고는 제외</small></div><button class="toggle on" id="strict-toggle" role="switch" aria-checked="true" aria-label="연차·자격증 기준 부합 공고만 알림"></button></div></div>
+<p class="info-note" id="alert-preview" aria-live="polite"></p><div class="settings-actions" style="gap:12px"><button class="text-button" id="test-notification" disabled>테스트 알림</button><button class="primary" id="save-settings">설정 저장</button></div></section>
+</main></div>
+<dialog id="detail-dialog" aria-labelledby="detail-heading"><div id="detail-content"></div></dialog><div class="toast" role="status" aria-live="polite" id="toast"></div>
+<script id="verified-data" type="application/json">{
+  "checkedAt": "2026-11-11T00:39:00+09:00",
+  "mode": "verified-snapshot",
+  "jobs": [
+    {
+      "id": "hanmi-133407",
+      "company": "온라인팜",
+      "initial": "온",
+      "type": "중견기업",
+      "title": "안전보건관리자 채용",
+      "region": "서울",
+      "city": "송파구",
+      "exp": "신입·경력",
+      "min": 0,
+      "max": null,
+      "employment": "정규직",
+      "cert": true,
+      "certLabel": "산업안전기사 등 관련 자격 필수",
+      "tags": [
+        "위험성평가",
+        "산업안전기사",
+        "안전보건"
+      ],
+      "postedAt": "2026-11-04",
+      "deadline": "2026-11-12",
+      "deadlineAt": "2026-11-12T23:59:00+09:00",
+      "sourceName": "한미그룹 공식",
+      "sourceUrl": "https://hanmi.recruiter.co.kr/career/jobs/133407",
+      "employeeCount": 407,
+      "employeeCountAsOf": "2026.05.08",
+      "annualRevenueEok": 11366,
+      "revenueYear": 2025,
+      "listingStatus": "unlisted",
+      "companySources": [
+        {
+          "label": "직원·매출·유형: 잡코리아 / NICE",
+          "url": "https://www.jobkorea.co.kr/company/1807265"
+        },
+        {
+          "label": "비상장·복지: 기업 등록 채용공고",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50305300"
+        }
+      ],
+      "tasks": [
+        "현장 안전보건 개선계획과 위험성평가 운영",
+        "안전 매뉴얼 정비 및 사업장 점검·작업 측정"
+      ],
+      "requirements": [
+        "전문학사 이상(졸업예정자 포함), 안전보건 관련 자격 보유",
+        "관련 실무·전공 및 산업위생·대기환경·인간공학 자격 우대"
+      ],
+      "fitNote": "",
+      "factsNote": "채용 법인 온라인팜 기준입니다. 한미약품 또는 한미그룹 전체 수치를 사용하지 않았습니다.",
+      "companyId": "hanmi-133407",
+      "rank": 1,
+      "color": "#f7f9f6",
+      "status": "open",
+      "checkedAt": "2026.11.11",
+      "sourceKind": "posting",
+      "logoUrl": "https://daoift3qrrnil.cloudfront.net/company_groups/images/000/000/234/original/jss_hashed_a9934d70443d6794523c_20261026T131514_%E1%84%8B%E1%85%A9%E1%86%AB%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%91%E1%85%A1%E1%86%B7.png?1792988114="
+    },
+    {
+      "id": "jk-50325964",
+      "company": "이에스디웍",
+      "initial": "E",
+      "type": "중소기업",
+      "title": "환경안전담당 경력 채용",
+      "region": "경기",
+      "city": "화성시",
+      "exp": "경력 3년 이상",
+      "min": 3,
+      "max": null,
+      "employment": "정규직 · 수습 3개월",
+      "cert": true,
+      "certLabel": "환경·안전 자격증 우대",
+      "tags": [
+        "환경안전",
+        "산업안전기사",
+        "위험성평가"
+      ],
+      "postedAt": "2026-11-09",
+      "deadline": "2026-12-09",
+      "sourceName": "잡코리아",
+      "sourceUrl": "https://www.jobkorea.co.kr/Recruit/GI_Read/50325964",
+      "employeeCount": 198,
+      "employeeCountAsOf": "2025.12.31",
+      "annualRevenueEok": 641.1,
+      "revenueYear": 2025,
+      "listingStatus": "unlisted",
+      "companySources": [
+        {
+          "label": "직원·매출·유형: 잡코리아 / NICE",
+          "url": "https://www.jobkorea.co.kr/Recruit/Co_Read/C/43540783"
+        }
+      ],
+      "tasks": [
+        "위험물·대기환경·폐기물 관리와 안전보건 개선",
+        "위험성평가, 환경안전 교육 및 사고 대응계획 운영"
+      ],
+      "requirements": [
+        "학력 제한 없음, 관련 경력 3년 이상",
+        "환경·안전 자격 및 관련 실무 우대"
+      ],
+      "fitNote": "",
+      "factsNote": "직원 수와 매출은 2025년 말 기업정보 기준입니다. 공고 소개문에 남아 있는 과거 수치와 구분했습니다.",
+      "companyId": "jk-50325964",
+      "rank": 2,
+      "color": "#f7f9f6",
+      "status": "open",
+      "checkedAt": "2026.11.11",
+      "sourceKind": "posting",
+      "logoUrl": "https://imgs.jobkorea.co.kr/img1/_whitebg/200X80/Co_Logo/Logo/2024/2/27/JK_CO_bFxsduR24022717462639.png",
+      "deadlineAt": "2026-12-09T23:59:59+09:00"
+    },
+    {
+      "id": "jk-50151432",
+      "company": "동원F&B",
+      "initial": "동",
+      "type": "중견기업",
+      "title": "수원공장 안전·환경 담당 경력직",
+      "region": "경기",
+      "city": "수원시 장안구",
+      "exp": "경력 3년 이상",
+      "min": 3,
+      "max": null,
+      "employment": "비정규직 · 1년 후 전환 심사",
+      "cert": true,
+      "certLabel": "산업안전기사 또는 수질환경기사 우대",
+      "tags": [
+        "산업안전기사",
+        "안전관리",
+        "환경관리"
+      ],
+      "postedAt": "2026-10-12",
+      "deadline": "2026-12-11",
+      "sourceName": "잡코리아",
+      "sourceUrl": "https://www.jobkorea.co.kr/Recruit/GI_Read/50151432",
+      "employeeCount": 3073,
+      "employeeCountAsOf": "기준일 미표기",
+      "annualRevenueEok": 21792.22,
+      "revenueYear": 2025,
+      "listingStatus": "listed",
+      "companySources": [
+        {
+          "label": "직원·매출·분류·상장: 인크루트 / NICE D&B",
+          "url": "https://www.incruit.com/company/1484553"
+        }
+      ],
+      "tasks": [
+        "공장 안전보건 운영, 건강검진과 법정교육 관리",
+        "배출시설·화학물질·폐기물 및 환경 인허가 관리"
+      ],
+      "requirements": [
+        "학사 이상, 경력 3년 이상",
+        "안전·환경 관련 전공 및 산업안전기사·수질환경기사 우대"
+      ],
+      "fitNote": "",
+      "factsNote": "동원에프앤비 법인 기준이며 그룹 전체 매출이 아닙니다. 기업 유형은 인크루트의 중견기업 분류를 따릅니다.",
+      "jobNote": "상단 요약에는 정규직으로 표기되어 있으나 상세 모집요강의 “비정규직, 1년 후 정규직 전환 심사”를 우선 반영했습니다.",
+      "companyId": "jk-50151432",
+      "rank": 3,
+      "color": "#f7f9f6",
+      "status": "open",
+      "checkedAt": "2026.11.11",
+      "sourceKind": "posting",
+      "logoUrl": "https://l.incru.it/2011/06/dwfnb.jpg",
+      "deadlineAt": "2026-12-11T23:59:59+09:00"
+    },
+    {
+      "id": "jk-50230608",
+      "company": "현대성우캐스팅",
+      "initial": "현",
+      "type": "중견기업",
+      "title": "충주공장 사업장 안전관리",
+      "region": "충북",
+      "city": "충주시",
+      "exp": "제조업 안전관리 4년 이상",
+      "min": 4,
+      "max": null,
+      "employment": "고용형태 원문 확인",
+      "cert": true,
+      "certLabel": "산업안전기사 우대",
+      "tags": [
+        "산업안전기사",
+        "ISO 45001",
+        "안전관리"
+      ],
+      "postedAt": "2026-10-21",
+      "deadline": "2026-11-30",
+      "deadlineAt": "2026-11-30T23:59:59+09:00",
+      "sourceName": "잡코리아",
+      "sourceUrl": "https://www.jobkorea.co.kr/Recruit/GI_Read/50230608",
+      "employeeCount": 840,
+      "employeeCountAsOf": "2026.04.08",
+      "annualRevenueEok": 7686.5,
+      "revenueYear": 2025,
+      "listingStatus": "unknown",
+      "companySources": [
+        {
+          "label": "법인 규모·유형: 잡코리아 / NICE",
+          "url": "https://www.jobkorea.co.kr/company/42259605"
+        }
+      ],
+      "tasks": [
+        "사업장 안전점검, 협력사·도급작업 관리",
+        "ISO 45001 및 안전보건경영시스템 운영, 관공서 대응"
+      ],
+      "requirements": [
+        "전문학사 이상, 자동차 부품 또는 제조업 안전관리 경력 4년 이상",
+        "관련 자격·전공, 협력사 관리 및 경영시스템 경험 우대"
+      ],
+      "fitNote": "제조업 경력 인정 확인",
+      "factsNote": "공고의 간이 기업정보와 수치가 달라, 현대성우캐스팅 법인의 기업정보(2026.04.08 직원 수)를 사용했습니다. 공장 단독 인원은 아닙니다.",
+      "jobNote": "공단 경력이 필수 제조업 경력으로 인정되는지는 채용 담당자 확인이 필요합니다. 채용 시 조기 마감할 수 있습니다.",
+      "companyId": "jk-50230608",
+      "rank": 4,
+      "color": "#f7f9f6",
+      "status": "open",
+      "checkedAt": "2026.11.11",
+      "sourceKind": "posting",
+      "logoUrl": "https://cdn.back.dmand.co.kr/companies/1210/logo.png"
+    },
+    {
+      "id": "jk-50250325",
+      "company": "이수페타시스",
+      "initial": "ISU",
+      "type": "중견기업",
+      "title": "환경안전팀 경력사원",
+      "region": "대구",
+      "city": "달성군",
+      "exp": "관련 경력 3~5년",
+      "min": 3,
+      "max": 5,
+      "employment": "고용형태 원문 확인",
+      "cert": true,
+      "certLabel": "수질·대기환경기사 모두 필수",
+      "tags": [
+        "산업안전기사 우대",
+        "수질환경기사",
+        "대기환경기사"
+      ],
+      "postedAt": "2026-09-27",
+      "deadline": "2026-11-26",
+      "sourceName": "잡코리아",
+      "sourceUrl": "https://www.jobkorea.co.kr/Recruit/GI_Read/50250325",
+      "employeeCount": 1445,
+      "employeeCountAsOf": "2026.06.30",
+      "annualRevenueEok": 9296.6,
+      "revenueYear": 2025,
+      "listingStatus": "listed",
+      "companySources": [
+        {
+          "label": "직원·매출·유형: 잡코리아 / NICE",
+          "url": "https://www.jobkorea.co.kr/company/1599570/"
+        },
+        {
+          "label": "코스피·모집요건: 기업 등록 공고",
+          "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50250325"
+        }
+      ],
+      "tasks": [
+        "6공장의 환경·안전·보건·소방 관리",
+        "환경 관련 대관업무 및 고객사 ESG 대응"
+      ],
+      "requirements": [
+        "관련 경력 3~5년, 학사 이상",
+        "수질환경기사와 대기환경기사 동시 보유 필수",
+        "산업안전기사 및 통합환경허가 경험 우대"
+      ],
+      "fitNote": "추가 자격증 필요",
+      "factsNote": "이수페타시스 법인 기업정보 기준입니다.",
+      "jobNote": "7년 경력은 명시된 3~5년 범위를 벗어나며, 산업안전기사만으로 필수 자격이 충족되지 않습니다. 채용 시 조기 마감할 수 있습니다.",
+      "companyId": "jk-50250325",
+      "rank": 5,
+      "color": "#f7f9f6",
+      "status": "open",
+      "checkedAt": "2026.11.11",
+      "sourceKind": "posting",
+      "logoUrl": "https://www.petasys.com/kor/images/common/logo.jpg",
+      "deadlineAt": "2026-11-26T23:59:59+09:00"
+    }
+  ],
+  "companies": [
+    {
+      "id": "hanmi-133407",
+      "company": "온라인팜",
+      "logoUrl": "https://daoift3qrrnil.cloudfront.net/company_groups/images/000/000/234/original/jss_hashed_a9934d70443d6794523c_20261026T131514_%E1%84%8B%E1%85%A9%E1%86%AB%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%91%E1%85%A1%E1%86%B7.png?1792988114=",
+      "pay": "면접 후 결정",
+      "paySource": {
+        "label": "채용공고 급여 안내",
+        "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50305300"
+      },
+      "salary": 7298,
+      "salaryYear": "2026",
+      "salarySource": {
+        "label": "인크루트 연봉정보",
+        "url": "https://www.incruit.com/company/16243230/salary"
+      },
+      "salaryNote": "공공데이터·기업 공시·자체 수집 자료 등을 바탕으로 한 참고치입니다. 직군·연차와 성과급 포함 범위가 달라 7년차 안전보건 직무의 제시 연봉을 뜻하지 않습니다.",
+      "benefitSource": {
+        "label": "기업 등록 공고의 복리후생",
+        "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50305300"
+      },
+      "benefitKind": "공고 기재",
+      "benefits": [
+        {
+          "label": "복지포인트",
+          "text": "선택적 복지포인트"
+        },
+        {
+          "label": "가족 의료비",
+          "text": "가족 의료비 지원"
+        },
+        {
+          "label": "휴식",
+          "text": "패밀리데이·리프레시 휴가"
+        }
+      ],
+      "checkedAt": "2026.11.11",
+      "tags": [
+        {
+          "label": "복지포인트"
+        },
+        {
+          "label": "가족 의료비"
+        },
+        {
+          "label": "휴식"
+        }
+      ]
+    },
+    {
+      "id": "jk-50325964",
+      "company": "이에스디웍",
+      "logoUrl": "https://imgs.jobkorea.co.kr/img1/_whitebg/200X80/Co_Logo/Logo/2024/2/27/JK_CO_bFxsduR24022717462639.png",
+      "pay": "3,600~5,000만원",
+      "paySource": {
+        "label": "모집 공고의 제시 연봉",
+        "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50325964"
+      },
+      "payNote": "면접 후 결정. 수습 3개월이며 기본급·성과급 구성은 공고에 별도 명시되지 않았습니다.",
+      "salary": null,
+      "benefitSource": {
+        "label": "기업 등록 공고의 복리후생",
+        "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50325964"
+      },
+      "benefitKind": "공고 기재",
+      "benefits": [
+        {
+          "label": "식사 지원",
+          "text": "구내식당·점심 식사 지원"
+        },
+        {
+          "label": "기숙사",
+          "text": "기숙사 지원"
+        },
+        {
+          "label": "휴식",
+          "text": "리프레시 휴가"
+        }
+      ],
+      "checkedAt": "2026.11.11",
+      "tags": [
+        {
+          "label": "식사 지원"
+        },
+        {
+          "label": "기숙사"
+        },
+        {
+          "label": "휴식"
+        }
+      ]
+    },
+    {
+      "id": "jk-50151432",
+      "company": "동원F&B",
+      "logoUrl": "https://l.incru.it/2011/06/dwfnb.jpg",
+      "pay": "회사 내규",
+      "paySource": {
+        "label": "채용공고 급여 안내",
+        "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50151432"
+      },
+      "salary": null,
+      "benefitSource": {
+        "label": "인크루트 기업 복리후생",
+        "url": "https://www.incruit.com/company/1484553"
+      },
+      "benefitKind": "기업정보",
+      "benefits": [
+        {
+          "label": "자녀 학자금",
+          "text": "초등·중등 자녀 학자금 지원 안내"
+        }
+      ],
+      "benefitNote": "기업 공통 안내이며 수원공장 비정규직 적용 여부·지원 금액은 미확인입니다.",
+      "checkedAt": "2026.11.11",
+      "tags": [
+        {
+          "label": "자녀 학자금"
+        }
+      ]
+    },
+    {
+      "id": "jk-50230608",
+      "company": "현대성우캐스팅",
+      "logoUrl": "https://cdn.back.dmand.co.kr/companies/1210/logo.png",
+      "pay": "회사 내규",
+      "paySource": {
+        "label": "채용공고 급여 안내",
+        "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50230608"
+      },
+      "salary": null,
+      "benefitSource": {
+        "label": "디맨드의 해당 공고 복리후생",
+        "url": "https://www.dmand.co.kr/jd/detail/226948"
+      },
+      "benefitKind": "채용정보",
+      "benefits": [
+        {
+          "label": "주거 지원",
+          "text": "기숙사·주택자금 융자 안내"
+        },
+        {
+          "label": "자녀 학자금",
+          "text": "자녀 학자금 지원 안내"
+        },
+        {
+          "label": "통근버스",
+          "text": "통근버스 운영 안내"
+        }
+      ],
+      "benefitNote": "제3자 채용정보의 안내입니다. 충주공장·채용 직무에 적용되는 조건은 원문 및 담당자 확인이 필요합니다.",
+      "checkedAt": "2026.11.11",
+      "tags": [
+        {
+          "label": "주거 지원"
+        },
+        {
+          "label": "자녀 학자금"
+        },
+        {
+          "label": "통근버스"
+        }
+      ]
+    },
+    {
+      "id": "jk-50250325",
+      "company": "이수페타시스",
+      "logoUrl": "https://www.petasys.com/kor/images/common/logo.jpg",
+      "pay": "회사 내규",
+      "paySource": {
+        "label": "채용공고 급여 안내",
+        "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50250325"
+      },
+      "salary": null,
+      "benefitSource": {
+        "label": "회사 공식 복리후생",
+        "url": "https://www.petasys.com/kor/recruit/recruit02.jsp"
+      },
+      "benefitKind": "회사 공식",
+      "benefits": [
+        {
+          "label": "기숙사·통근",
+          "text": "기숙사 제공 및 통근버스"
+        },
+        {
+          "label": "자녀 학자금",
+          "text": "자녀 학자금과 주택자금 대출"
+        },
+        {
+          "label": "건강검진",
+          "text": "정기·직위·연령별 건강검진"
+        }
+      ],
+      "checkedAt": "2026.11.11",
+      "tags": [
+        {
+          "label": "기숙사·통근"
+        },
+        {
+          "label": "자녀 학자금"
+        },
+        {
+          "label": "건강검진"
+        }
+      ]
+    }
+  ]
+}</script>
+<script type="module">
+'use strict';
+import {COMPANY_TYPES,EMPLOYEE_OPTIONS,REVENUE_OPTIONS,LISTING_OPTIONS,validOption,validCompanyTypes,matchesCompanyType,knownEmployeeCount,knownRevenue,matchesCompanyFilters,MINIMUM_COMPANY_SCALE,meetsMinimumCompanyScale,isOpenJob,match,eligibleJobs as policyEligible,getAlertCandidates as policyCandidates} from './lib/policy.mjs';
+import {initLive} from './client.mjs';
+const dataset=JSON.parse(document.getElementById('verified-data').textContent);
+let {jobs,companies}=dataset;
+function toggleCompanyType(selected,type){if(type==='all'){selected.clear()}else if(COMPANY_TYPES.includes(type)){selected.has(type)?selected.delete(type):selected.add(type)}}
+const employeeLabel=j=>knownEmployeeCount(j)?j.employeeCount.toLocaleString('ko-KR')+'명':'미확인';
+function revenueLabel(j){if(!knownRevenue(j))return '미확인';const value=j.annualRevenueEok;if(value<10000)return value.toLocaleString('ko-KR')+'억원';const jo=Math.floor(value/10000),rest=value%10000;return jo.toLocaleString('ko-KR')+'조'+(rest?' '+rest.toLocaleString('ko-KR')+'억원':'원')}
+const listingLabel=value=>({listed:'상장',unlisted:'비상장'}[value]||'상장 여부 미확인');
+const eligibleJobs=(source=jobs,now=Date.now())=>policyEligible(source,now);
+const getAlertCandidates=(settings,source=jobs,now=Date.now())=>policyCandidates(settings,source,now);
+const koreanDate=(now=Date.now())=>new Date(now+9*60*60*1000).toISOString().slice(0,10);
+const daysLeft=(j,now=Date.now())=>Math.round((Date.parse(j.deadline+'T00:00:00+09:00')-Date.parse(koreanDate(now)+'T00:00:00+09:00'))/86400000);
+const deadlineLabel=j=>!j.deadline?'채용 시 마감':(daysLeft(j)===0?'오늘 마감':'D-'+daysLeft(j))+' · '+j.deadline.slice(5).replace('-','.');
+const METRO=['서울','경기','인천'];
+function availableRegions(){return [...new Set(eligibleJobs().map(j=>j.region).filter(r=>typeof r==='string'&&r.trim()))].sort((a,b)=>{const ai=METRO.indexOf(a),bi=METRO.indexOf(b);return (ai<0?3:ai)-(bi<0?3:bi)||a.localeCompare(b,'ko')})}
+function defaultRegions(){const available=availableRegions(),metro=METRO.filter(r=>available.includes(r));return metro.length?metro:available}
+const storage={get(k,f){try{return JSON.parse(localStorage.getItem(k))??f}catch{return f}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}}};
+const validRegions=value=>{const available=availableRegions(),list=Array.isArray(value)?value.filter(r=>available.includes(r)):[];return new Set(list.length?list:defaultRegions())};
+const storedCompanyFilters=storage.get('safety-radar-draft:company-filters',{});
+let employeeFilter=validOption(storedCompanyFilters?.employee,EMPLOYEE_OPTIONS),listingFilter=validOption(storedCompanyFilters?.listing,LISTING_OPTIONS),revenueFilter=validOption(storedCompanyFilters?.revenue,REVENUE_OPTIONS);
+function saveCompanyFilters(){if(!storage.set('safety-radar-draft:company-filters',{employee:employeeFilter,listing:listingFilter,revenue:revenueFilter,types:[...types]}))toast('이 환경에서는 선택한 조건이 현재 화면에만 반영됩니다.')}
+const storedSaved=storage.get('safety-radar-draft:saved',[]);
+let saved=new Set(Array.isArray(storedSaved)?storedSaved:[]),view='jobs',regions=validRegions(storage.get('safety-radar-draft:regions',METRO)),types=validCompanyTypes(storedCompanyFilters?.types),onlyMatch=false;
+const settingsDefault={enabled:false,strict:false,cadence:'hourly',regions:METRO,employee:'all',listing:'all',revenue:'all',types:[]};
+let savedSettings={...settingsDefault,...storage.get('safety-radar-draft:settings',{})},alertRegions=new Set(savedSettings.regions||METRO),regionDraft=new Set(),regionMode='jobs',toastTimer;
+let alertTypes=validCompanyTypes(savedSettings.types);
+const $=s=>document.querySelector(s);
+const icon=n=>`<svg aria-hidden="true"><use href="#${n}"/></svg>`;
+const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const salaryText=n=>n>=10000?`${Math.floor(n/10000).toLocaleString('ko-KR')}억${n%10000?' '+(n%10000).toLocaleString('ko-KR')+'만원':'원'}`:`${n.toLocaleString('ko-KR')}만원`;
+function safeImageUrl(value){try{const url=new URL(value,location.href);return ['https:','http:'].includes(url.protocol)?url.href:''}catch{return ''}}
+function companyLogo(j){const url=j.logoUrl?safeImageUrl(j.logoUrl):'';return `<div class="company-logo" style="background:${/^#[0-9a-f]{6}$/i.test(j.color)?j.color:'#f7f9f6'}" role="img" aria-label="${escape(j.company)} ${url?'로고':'로고 미등록'}">${url?`<img src="${escape(url)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:''}<span class="logo-fallback${url?' hidden':''}" aria-hidden="true">${escape(j.initial)}</span></div>`}
+function external(url,label,cls='reference'){return `<a class="${cls}" href="${escape(safeImageUrl(url)||'#')}" target="_blank" rel="noopener noreferrer">${escape(label)} ↗</a>`}
+function sourceButton(j){return `<a class="source-button" href="${escape(safeImageUrl(j.sourceUrl)||'#')}" target="_blank" rel="noopener noreferrer" aria-label="${escape(j.company)} ${escape(j.title)} 채용공고 보기, 새 탭">채용공고 보기 ${icon('external')}</a>`}
+document.addEventListener('error',e=>{if(e.target instanceof HTMLImageElement && e.target.closest('.company-logo')){e.target.classList.add('hidden');e.target.nextElementSibling.classList.remove('hidden');e.target.parentElement.setAttribute('aria-label','기업 로고 없음')}},true);
+function toast(t){$('#toast').textContent=t;$('#toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),3200)}
+function counters(){$('#saved-count').textContent=eligibleJobs().filter(j=>saved.has(j.id)).length}
+function regionSummary(set){return availableRegions().filter(r=>set.has(r)).join(' · ')||'공고 없음'}
+function saveRegions(){if(!storage.set('safety-radar-draft:regions',[...regions]))toast('이 환경에서는 지역 선택이 현재 화면에만 반영됩니다.')}
+function renderRegions(){
+  const available=availableRegions();regions=validRegions([...regions]);
+  $('#region-filters').innerHTML=`<span class="filter-label">지역</span>${available.length?available.filter(r=>regions.has(r)).map(r=>`<button class="chip active" data-remove-region="${escape(r)}" aria-label="${escape(r)} 지역 제외">${escape(r)} ×</button>`).join('')+'<button class="chip" data-open-regions="jobs">지역 선택</button>':'<span class="region-summary">공고 없음</span>'}`;
+  $('#alert-regions').innerHTML=`<span class="region-summary">${escape(regionSummary(alertRegions))}</span>${available.length?'<button class="chip" data-open-regions="alerts">지역 선택</button>':''}`;
+}
+function openRegions(mode){const available=availableRegions();if(!available.length)return;regionMode=mode;regionDraft=validRegions([...(mode==='alerts'?alertRegions:regions)]);$('#detail-content').innerHTML=`<div class="modal-inner region-modal"><div class="modal-top"><span>${mode==='alerts'?'알림':'공고'} 근무 지역</span><button class="icon-button" data-close aria-label="지역 선택 닫기">${icon('close')}</button></div><h2 id="detail-heading">지역 선택</h2><p class="info-note">등록된 공고가 있는 지역만 표시합니다. 여러 곳을 선택할 수 있습니다.</p><div class="region-presets"><button class="chip" data-modal-preset="all">전체 선택</button><button class="text-button" data-modal-preset="none">선택 해제</button></div><div class="region-grid">${available.map(r=>`<button class="chip" data-pick-region="${escape(r)}" aria-pressed="false">${escape(r)}</button>`).join('')}</div><p class="info-note" id="region-selection-count" aria-live="polite"></p></div><div class="modal-footer"><button class="text-button" data-close>취소</button><button class="primary" id="apply-regions">선택 적용</button></div>`;updateRegionDraft();$('#detail-dialog').showModal()}
+function updateRegionDraft(){document.querySelectorAll('[data-pick-region]').forEach(b=>{const active=regionDraft.has(b.dataset.pickRegion);b.classList.toggle('active',active);b.setAttribute('aria-pressed',active)});$('#region-selection-count').textContent=regionDraft.size?`${regionDraft.size}개 지역 선택`:'지역을 하나 이상 선택해 주세요.';$('#apply-regions').disabled=regionDraft.size===0}
+function syncTypeChips(){
+  for(const [attribute,selected] of [['data-type',types],['data-alert-type',alertTypes]]){
+    document.querySelectorAll('['+attribute+']').forEach(button=>{const value=button.getAttribute(attribute),active=value==='all'?selected.size===0:selected.has(value);button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active))});
+  }
+}
+function renderScaleFilters(){
+  for(const [key,options,value] of [['employee',EMPLOYEE_OPTIONS,employeeFilter],['revenue',REVENUE_OPTIONS,revenueFilter],['listing',LISTING_OPTIONS,listingFilter]]){
+    const group=$('#'+key+'-filter');
+    if(!group.children.length)group.innerHTML=options.map(([option,label])=>`<button class="chip" data-scale-filter="${key}" data-value="${option}" aria-pressed="false">${label}</button>`).join('');
+    group.querySelectorAll('button').forEach(button=>{const active=button.dataset.value===value;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active))});
+  }
+  const extra=[...types];if(onlyMatch)extra.push('7년 경력');$('#extra-filter-summary').textContent=extra.length?extra.join(' · '):'기업 유형 · 경력';
+}
+function renderFilterSummary(){
+  const parts=[regionSummary(regions)];
+  for(const [value,options,label] of [[employeeFilter,EMPLOYEE_OPTIONS,'직원'],[revenueFilter,REVENUE_OPTIONS,'연매출'],[listingFilter,LISTING_OPTIONS,'상장 여부']]){
+    if(value==='all')continue;
+    const text=options.find(([key])=>key===value)?.[1];
+    parts.push(value==='unknown'?label+' 미확인':label==='상장 여부'?text:label+' '+text);
+  }
+  if(types.size)parts.push([...types].join('·'));
+  if(onlyMatch)parts.push('7년 연차 범위 부합');
+  $('#filter-summary').textContent=parts.join(' · ');
+}
+function setFiltersOpen(open,persist=true){
+  $('#filter-toggle').setAttribute('aria-expanded',String(open));
+  $('#filter-toggle-text').textContent=open?'접기':'펼치기';
+  $('#filter-toggle').setAttribute('aria-label',open?'필터 접기':'필터 펼치기');
+  $('#filter-box').dataset.expanded=String(open);
+  $('#filter-panel').hidden=!open;
+  $('#filter-summary').hidden=open;
+  if(persist)storage.set('safety-radar-draft:filters-open',open);
+}
+function companyScale(j){return `<dl class="company-scale"><div><dt>직원 수</dt><dd>${employeeLabel(j)}</dd><small>${escape(j.employeeCountAsOf||'기준일 미확인')} · 법인</small></div><div><dt>연매출</dt><dd>${revenueLabel(j)}</dd><small>${escape(j.revenueYear||'기준연도 미확인')}년 · 법인 기업정보</small></div><div><dt>상장 여부</dt><dd>${listingLabel(j.listingStatus)}</dd><small>채용 법인 기준</small></div></dl>`}
+function companyBadges(j){return `<div class="company-badges" role="group" aria-label="기업 규모"><span class="company-badge">${knownEmployeeCount(j)?'직원 '+employeeLabel(j):'직원 수 미확인'}</span><span class="company-badge">연매출 ${revenueLabel(j)}</span><span class="company-badge">${listingLabel(j.listingStatus)}</span></div>`}
+function compareJobs(a,b,sort){
+  if(sort==='employees')return (knownEmployeeCount(b)?b.employeeCount:-1)-(knownEmployeeCount(a)?a.employeeCount:-1)||a.rank-b.rank;
+  if(sort==='revenue')return (knownRevenue(b)?b.annualRevenueEok:-1)-(knownRevenue(a)?a.annualRevenueEok:-1)||a.rank-b.rank;
+  if(sort==='deadline')return (Date.parse(a.deadlineAt)||Infinity)-(Date.parse(b.deadlineAt)||Infinity);
+  if(sort==='new')return b.postedAt.localeCompare(a.postedAt)||a.rank-b.rank;
+  return Number(match(b))-Number(match(a))||a.rank-b.rank;
+}
+function render(){
+  syncTypeChips();renderRegions();renderScaleFilters();renderFilterSummary();
+  const q=$('#job-search').value.trim().toLowerCase();
+  const filtered=eligibleJobs().filter(j=>(view!=='saved'||saved.has(j.id))&&regions.has(j.region)&&matchesCompanyType(j,types)&&matchesCompanyFilters(j,employeeFilter,listingFilter,revenueFilter)&&(!onlyMatch||match(j))&&[j.company,j.title,j.region,j.city,...j.tags,...(companyForJob(j)?.tags.map(t=>t.label)||[])].join(' ').toLowerCase().includes(q));
+  const sort=$('#sort').value;
+  filtered.sort((a,b)=>compareJobs(a,b,sort));
+  $('#result-count').innerHTML=`${view==='saved'?'관심공고':'채용공고'} <b>${filtered.length}</b>`;
+  $('#jobs').innerHTML=filtered.length?filtered.map(j=>`<article class="job-card">${companyLogo(j)}<div class="job-info"><div class="company-name">${escape(j.company)} <span>${escape(j.type)}</span></div><h2 class="job-title"><button data-detail="${escape(j.id)}">${escape(j.title)}</button></h2><div class="job-meta"><span>${escape(j.region)} ${escape(j.city)}</span><span>${escape(j.exp)}</span><span>${escape(j.employment)}</span></div><div class="job-conditions"><span class="${match(j)?'match':'needs-check'}">${match(j)?'7년 연차 범위 부합':j.min===null?'경력 조건 확인 필요':'7년 경력 범위 불일치'}</span><span>${escape(j.certLabel||'자격요건 확인 필요')}</span></div>${j.fitNote?`<p class="job-fit-note">${escape(j.fitNote)}</p>`:''}${companyBadges(j)}${jobCompensation(j)}</div><div class="job-actions"><span class="deadline">${deadlineLabel(j)}</span><div><div class="action-buttons"><button class="save ${saved.has(j.id)?'saved':''}" data-save="${escape(j.id)}" aria-label="${escape(j.title)} ${saved.has(j.id)?'저장 해제':'관심공고 저장'}" aria-pressed="${saved.has(j.id)}">${icon('bookmark')}<span>${saved.has(j.id)?'저장됨':'저장'}</span></button>${sourceButton(j)}</div><div class="source-caption">${escape(j.sourceName)}</div></div></div></article>`).join(''):`<div class="empty"><h2>${view==='saved'&&saved.size===0?'저장한 공고가 없습니다':'조건에 맞는 공고가 없습니다'}</h2><button class="text-button" id="empty-reset">${view==='saved'&&saved.size===0?'채용공고 보기':'검색 조건 초기화'}</button></div>`;
+  counters();
+}
+function companyForJob(j){return j.companyId?companies.find(c=>c.id===j.companyId):null}
+function profileBadges(c){return `<div class="profile-badges" role="group" aria-label="공고 연봉"><span class="profile-badge salary">공고 연봉 <strong>${escape(c.pay)}</strong></span>${c.salary?`<span class="company-badge">회사 평균(참고) ${salaryText(c.salary)}</span>`:''}</div><div class="profile-badges benefits" role="group" aria-label="주요 복지"><span class="badge-label">복지</span>${c.tags.map(t=>`<span class="profile-badge">${escape(t.label)}</span>`).join('')}<span class="badge-source">${escape(c.benefitKind)}</span></div>`}
+function profileEvidence(c){return `<div class="inline-evidence"><p class="info-note"><strong>공고 연봉: ${escape(c.pay)}</strong>${c.payNote?'<br>'+escape(c.payNote):''}</p>${external(c.paySource.url,c.paySource.label)}${c.salary?`<h3>회사 평균 연봉 · 참고</h3><p class="info-note">${escape(c.salaryYear)}년 ${salaryText(c.salary)}<br>${escape(c.salaryNote)}</p>${external(c.salarySource.url,c.salarySource.label)}`:'<p class="evidence-note">검증된 회사 평균 연봉 자료는 아직 연결되지 않았습니다.</p>'}<h3>복지 안내</h3><dl class="benefit-list">${c.benefits.map(b=>`<div class="benefit-item"><dt>${escape(b.label)}</dt><dd>${escape(b.text)}</dd></div>`).join('')}</dl><p class="evidence-note">${escape(c.benefitNote||'적용 대상·금액·현재 운영 조건은 채용 담당자 확인이 필요합니다.')}</p>${external(c.benefitSource.url,c.benefitSource.label)}<p class="evidence-note">자료 확인: ${escape(c.checkedAt)}</p></div>`}
+function jobCompensation(j){const c=companyForJob(j);if(!c)return '<div class="company-badges"><span class="company-badge">연봉·복지 미확인</span></div>';return `<div class="job-compensation">${profileBadges(c)}<details class="job-benefit-details"><summary aria-label="${escape(c.company)} 복지·연봉 상세와 출처">복지·연봉 상세 · 출처</summary>${profileEvidence(c)}</details></div>`}
+function navigate(next){view=['jobs','saved','settings'].includes(next)?next:'jobs';document.querySelectorAll('.nav-item').forEach(b=>b.classList.toggle('active',b.dataset.view===view));$('#explore-view').classList.toggle('hidden',!['jobs','saved'].includes(view));$('#settings-view').classList.toggle('hidden',view!=='settings');if(view!=='settings')render();window.scrollTo({top:0,behavior:'smooth'})}
+function reset(){types=new Set();employeeFilter='all';listingFilter='all';revenueFilter='all';$('#extra-filters').open=false;saveCompanyFilters();regions=new Set(defaultRegions());saveRegions();onlyMatch=false;$('#job-search').value='';$('#sort').value='match';syncTypeChips();$('#experience-filter').classList.remove('active');$('#experience-filter').setAttribute('aria-pressed','false');renderRegions();render()}
+function toggleSave(id){if(!eligibleJobs().some(j=>j.id===id))return;if(saved.has(id)){saved.delete(id);toast('관심공고에서 해제했어요.')}else{saved.add(id);toast('관심공고에 저장했어요. 이 브라우저에 보관됩니다.')}if(!storage.set('safety-radar-draft:saved',[...saved]))toast('이 환경에서는 브라우저 저장이 제한돼요. 현재 화면에만 반영됩니다.');render()}
+function detail(id){const j=eligibleJobs().find(j=>j.id===id);if(!j)return;$('#detail-content').innerHTML=`<div class="modal-inner"><div class="modal-top"><span>${escape(j.checkedAt)} 원문 접수 중 확인 · ${deadlineLabel(j)}</span><button class="icon-button" data-close aria-label="상세보기 닫기">${icon('close')}</button></div><div class="modal-company-row">${companyLogo(j)}<p class="modal-company">${escape(j.company)} · ${escape(j.type)}</p></div><h2 id="detail-heading">${escape(j.title)}</h2>${companyScale(j)}<p class="evidence-note">${escape(j.factsNote)}</p><div class="evidence-links">${j.companySources.map(src=>external(src.url,src.label)).join('')}</div><div class="modal-grid"><div><b>근무지</b>${escape(j.region+' '+j.city)}</div><div><b>경력</b>${escape(j.exp)}</div><div><b>고용형태</b>${escape(j.employment)}</div><div><b>자격증</b>${escape(j.certLabel)}</div></div>${j.jobNote?`<p class="info-note">${escape(j.jobNote)}</p>`:''}<h3>담당 업무</h3><ul>${j.tasks.map(t=>'<li>'+escape(t)+'</li>').join('')}</ul><h3>지원요건</h3><ul>${j.requirements.map(t=>'<li>'+escape(t)+'</li>').join('')}</ul><p class="evidence-note">연차 범위는 7년을 숫자로 대조한 결과입니다. 학력·세부 경력 인정 및 채용 조건은 원문이 우선합니다.</p><h3>복지·연봉</h3>${jobCompensation(j)}</div><div class="modal-footer"><div>${sourceButton(j)}<div class="source-caption">${escape(j.sourceName)}</div></div><button class="primary secondary" data-modal-save="${escape(j.id)}">${saved.has(j.id)?'저장 해제':'관심공고 저장'} ${icon('bookmark')}</button></div>`;$('#detail-dialog').showModal()}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  if(b.dataset.view){navigate(b.dataset.view);return}
+  if(b.dataset.save){toggleSave(b.dataset.save);return}
+  if(b.dataset.detail){detail(b.dataset.detail);return}
+  if(b.dataset.modalSave){toggleSave(b.dataset.modalSave);b.innerHTML=(saved.has(b.dataset.modalSave)?'저장 해제':'관심공고 저장')+' '+icon('bookmark');return}
+  if(b.hasAttribute('data-close')){$('#detail-dialog').close();return}
+  if(b.id==='empty-reset'){if(view==='saved'&&saved.size===0)navigate('jobs');else reset();return}
+  if(b.id==='reset'){reset();return}
+  if(b.dataset.openRegions){openRegions(b.dataset.openRegions);return}
+  if(b.dataset.removeRegion){if(regions.size===1){toast('지역을 하나 이상 선택해 주세요.');return}regions.delete(b.dataset.removeRegion);saveRegions();renderRegions();render();return}
+  if(b.dataset.pickRegion){regionDraft.has(b.dataset.pickRegion)?regionDraft.delete(b.dataset.pickRegion):regionDraft.add(b.dataset.pickRegion);updateRegionDraft();return}
+  if(b.dataset.modalPreset){regionDraft=new Set(b.dataset.modalPreset==='all'?availableRegions():[]);updateRegionDraft();return}
+  if(b.id==='apply-regions'){regionDraft=new Set([...regionDraft].filter(r=>availableRegions().includes(r)));if(!regionDraft.size){toast('선택한 지역에 공고가 없습니다. 지역을 다시 선택해 주세요.');return}if(regionMode==='alerts'){alertRegions=new Set(regionDraft)}else{regions=new Set(regionDraft);saveRegions();render()}renderRegions();$('#detail-dialog').close();return}
+  if(b.dataset.scaleFilter){const key=b.dataset.scaleFilter,value=b.dataset.value;if(key==='employee')employeeFilter=validOption(value,EMPLOYEE_OPTIONS);if(key==='revenue')revenueFilter=validOption(value,REVENUE_OPTIONS);if(key==='listing')listingFilter=validOption(value,LISTING_OPTIONS);saveCompanyFilters();render();return}
+  if(b.dataset.type){toggleCompanyType(types,b.dataset.type);saveCompanyFilters();render();return}
+  if(b.dataset.alertType){toggleCompanyType(alertTypes,b.dataset.alertType);syncTypeChips();return}
+});
+function setOptions(id,options,value){const el=$('#'+id);el.innerHTML=options.map(([key,label])=>`<option value="${key}">${label}</option>`).join('');el.value=validOption(value,options)}
+if(types.size)$('#extra-filters').open=true;
+setOptions('alert-revenue-filter',REVENUE_OPTIONS,savedSettings.revenue);setOptions('alert-employee-filter',EMPLOYEE_OPTIONS,savedSettings.employee);setOptions('alert-listing-filter',LISTING_OPTIONS,savedSettings.listing);
+
+setFiltersOpen(storage.get('safety-radar-draft:filters-open',false)===true,false);
+$('#filter-toggle').addEventListener('click',()=>setFiltersOpen($('#filter-toggle').getAttribute('aria-expanded')!=='true'));
+$('#job-search').addEventListener('input',render);$('#sort').addEventListener('change',render);
+$('#experience-filter').addEventListener('click',()=>{onlyMatch=!onlyMatch;$('#experience-filter').classList.toggle('active',onlyMatch);$('#experience-filter').setAttribute('aria-pressed',onlyMatch);render()});
+$('.brand').addEventListener('click',e=>{e.preventDefault();navigate('jobs')});
+function setSwitch(el,value){el.classList.toggle('on',value);el.setAttribute('aria-checked',value)}
+setSwitch($('#notify-toggle'),savedSettings.enabled);setSwitch($('#strict-toggle'),savedSettings.strict);$('#cadence').value=['hourly','3hours','daily'].includes(savedSettings.cadence)?savedSettings.cadence:'hourly';
+$('#strict-toggle').addEventListener('click',()=>setSwitch($('#strict-toggle'),$('#strict-toggle').getAttribute('aria-checked')!=='true'));
+function readAlertSettings(){return {enabled:$('#notify-toggle').getAttribute('aria-checked')==='true',strict:$('#strict-toggle').getAttribute('aria-checked')==='true',cadence:$('#cadence').value,regions:[...alertRegions],types:[...alertTypes],employee:$('#alert-employee-filter').value,revenue:$('#alert-revenue-filter').value,listing:$('#alert-listing-filter').value}}
+function renderAlertPreview(){$('#alert-preview').textContent='현재 조건의 공고 '+getAlertCandidates(readAlertSettings()).length+'건 · 설정 저장 이후 새로 발견한 공고부터 알립니다.'}
+document.addEventListener('change',renderAlertPreview);
+document.addEventListener('click',()=>queueMicrotask(renderAlertPreview));
+document.addEventListener('error',e=>{if(e.target.matches?.('.company-logo img')){e.target.hidden=true;e.target.style.display='none';e.target.nextElementSibling?.classList.remove('hidden')}},true);
+let lastAvailability=availabilityKey();
+function availabilityKey(){return koreanDate()+':'+eligibleJobs().map(j=>j.id).join(',')}
+function refreshAvailability(){const next=availabilityKey();if(next!==lastAvailability){lastAvailability=next;render();renderAlertPreview()}}
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshAvailability()});
+setInterval(refreshAvailability,60000);
+$('#detail-dialog').addEventListener('click',e=>{if(e.target===$('#detail-dialog')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close()}});
+renderRegions();render();renderAlertPreview();
+initLive({
+  applyFeed(feed){jobs=feed.jobs;companies=feed.companies;render();renderAlertPreview();},
+  getSettings:readAlertSettings,
+  applySettings(settings){savedSettings=settings;alertRegions=new Set(settings.regions);alertTypes=validCompanyTypes(settings.types);setSwitch($('#notify-toggle'),settings.enabled);setSwitch($('#strict-toggle'),settings.strict);$('#cadence').value=settings.cadence;for(const key of ['employee','revenue','listing'])$('#alert-'+key+'-filter').value=settings[key];renderRegions();syncTypeChips();renderAlertPreview();},
+  toast,
+  onNavigate(params){if(params.has('settings'))navigate('settings');if(params.has('job')){const job=jobs.find(j=>j.id===params.get('job'));if(job){regions=new Set([job.region]);navigate('jobs');detail(job.id);}else toast('이 공고는 마감됐거나 현재 표시할 수 없습니다.');}}
+});
+</script>
+</body></html>

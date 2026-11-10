@@ -1,0 +1,12 @@
+{
+  "name": "wise-career-life",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.5" },
+  "scripts": {
+    "start": "node --use-env-proxy server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "collect": "node --use-env-proxy scripts/collect.mjs"
+  }
+}
