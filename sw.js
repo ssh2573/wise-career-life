@@ -9,7 +9,13 @@ self.addEventListener('push',event=>{
     const key=new Request(self.location.origin+'/__delivered/'+encodeURIComponent(message.id));
     if(await cache.match(key))return;
     const target=new URL(message.url||'/',self.location.origin);
-    await self.registration.showNotification(String(message.title).slice(0,100),{body:String(message.body||'').slice(0,350),tag:message.id,renotify:false,icon:'/icon.svg',data:{url:target.origin===self.location.origin?target.href:self.location.origin}});
+    let displayed=false;
+    try{
+      await self.registration.showNotification(String(message.title).slice(0,100),{body:String(message.body||'').slice(0,350),tag:message.id,renotify:false,icon:'/icon.svg',data:{url:target.origin===self.location.origin?target.href:self.location.origin}});
+      displayed=true;
+    }finally{
+      if(message.receipt?.id&&message.receipt?.token)await fetch('/api/push-receipts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...message.receipt,displayed}),signal:AbortSignal.timeout(5000)}).catch(()=>{});
+    }
     await cache.put(key,new Response('1'));
     const keys=await cache.keys();for(const old of keys.slice(0,Math.max(0,keys.length-500)))await cache.delete(old);
   })());

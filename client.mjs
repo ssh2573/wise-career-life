@@ -69,7 +69,21 @@ export function initLive({applyFeed,getSettings,applySettings,toast,onNavigate})
     }catch(e){status.textContent=e.message;if(e.status===401){writeDevice(null);device=null;}if(!device)switchValue(false);toast('설정을 적용하지 못했어요. 안내를 확인해 주세요.');}
     finally{busy=false;save.disabled=false;test.disabled=!device;}
   });
-  test.addEventListener('click',async()=>{if(!device||busy)return;test.disabled=true;try{await api('/api/subscriptions/'+device.id+'/test',{method:'POST',device,data:{}});toast('테스트 알림을 전송했어요. 실제 수신 여부를 확인해 주세요.');}catch(e){toast(e.message);}finally{test.disabled=!device;}});
+  test.addEventListener('click',async()=>{
+    if(!device||busy)return;busy=true;test.disabled=true;
+    try{
+      const sent=await api('/api/subscriptions/'+device.id+'/test',{method:'POST',device,data:{}});
+      status.textContent='테스트 알림을 보냈습니다. 이 브라우저의 수신을 확인하고 있어요.';
+      let receipt;
+      for(let i=0;i<20;i++){
+        await new Promise(r=>setTimeout(r,1000));
+        const data=await api('/api/subscriptions/'+device.id,{device});
+        if(data.lastTest?.id===sent.id&&data.lastTest.receivedAt){receipt=data.lastTest;break;}
+      }
+      status.textContent=receipt?.displayed?'브라우저가 테스트 알림을 받았습니다. 배너가 보이지 않으면 기기의 Chrome 알림 허용과 집중 모드를 확인해 주세요.':receipt?'알림은 도착했지만 표시하지 못했습니다. 브라우저와 기기의 알림 권한을 확인해 주세요.':'브라우저 수신이 아직 확인되지 않았습니다. 네트워크 연결과 기기의 알림 설정을 확인해 주세요.';
+      toast(receipt?.displayed?'브라우저 알림 수신을 확인했어요.':'테스트 결과 안내를 확인해 주세요.');
+    }catch(e){status.textContent=e.message;toast(e.message);}finally{busy=false;test.disabled=!device;}
+  });
   (async()=>{
     explain();await refresh();
     try{

@@ -23,6 +23,12 @@ test('HTTP feed, private device settings, origin checks, test-push and cancellat
   assert.equal((await call('/api/subscriptions/'+id)).status,401);assert.equal((await call('/api/subscriptions/'+id,{token:'bad'})).status,401);
   const own=await call('/api/subscriptions/'+id,{token});assert.equal(own.status,200);assert.equal(own.json().tokenHash,undefined);
   assert.equal((await call('/api/subscriptions/'+id+'/test',{method:'POST',token,data:{}})).status,200);assert.equal(sent.length,1);
+  const receipt=sent[0].receipt;
+  assert.equal((await call('/api/push-receipts',{method:'POST',data:{...receipt,token:'bad',displayed:true}})).status,401);
+  assert.equal((await call('/api/push-receipts',{method:'POST',data:receipt})).status,400);
+  assert.equal((await call('/api/push-receipts',{method:'POST',data:{...receipt,displayed:true}})).status,200);
+  const received=(await call('/api/subscriptions/'+id,{token})).json();
+  assert.ok(received.lastTest.receivedAt);assert.equal(received.lastTest.displayed,true);assert.equal(received.lastTest.tokenHash,undefined);assert.equal(received.lastTest.token,undefined);
   assert.equal((await call('/api/subscriptions/'+id+'/test',{method:'POST',token,data:{}})).status,429);
   await call('/api/subscriptions/'+id,{method:'PUT',token,data:{settings:{...settings,regions:['서울'],cadence:'daily'}}});assert.deepEqual(app.store.state.subscriptions[id].settings.regions,['서울']);
   assert.equal((await call('/api/subscriptions/'+id,{method:'DELETE',token,data:{}})).status,200);assert.equal(Object.keys(app.store.state.subscriptions).length,0);

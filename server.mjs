@@ -44,6 +44,13 @@ export async function createApp({directory=process.env.DATA_DIR?resolve(process.
           return json(res,200,{...feed,jobs:eligibleJobs(feed.jobs,clock()),collectionIntervalMinutes:Number(process.env.COLLECT_INTERVAL_MINUTES)||60,serverTime:new Date(clock()).toISOString(),collecting:scheduler});
         }
         if(path==='/api/config'&&req.method==='GET')return json(res,200,{publicKey:store.state.keys.publicKey,pushEnabled:true,collectionEnabled:scheduler,origin});
+        if(path==='/api/push-receipts'&&req.method==='POST'){
+          const data=await body(req),sub=Object.values(store.state.subscriptions).find(s=>s.lastTest?.id===data.id);
+          if(!sub||!timingSafeEqual(Buffer.from(hash(data.token)),Buffer.from(sub.lastTest.tokenHash))||clock()-Date.parse(sub.lastTest.sentAt)>3600000)throw error('유효하지 않은 알림 확인 요청',401);
+          if(typeof data.displayed!=='boolean')throw error('알림 확인 결과가 필요합니다.');
+          await store.update(s=>{const result=s.subscriptions[sub.id].lastTest;result.receivedAt=new Date(clock()).toISOString();result.displayed=data.displayed;});
+          return json(res,200,{ok:true});
+        }
         if(path==='/api/subscriptions'&&req.method==='POST'){
           const data=await body(req);if(!validSubscription(data.subscription))throw error('이 브라우저의 알림 수신 주소를 지원하지 않습니다.');
           const settings=sanitizeSettings(data.settings);if(!settings.regions.length)throw error('알림 지역을 선택해 주세요.');
@@ -56,14 +63,15 @@ export async function createApp({directory=process.env.DATA_DIR?resolve(process.
         const route=path.match(/^\/api\/subscriptions\/([\da-f-]{36})(\/test)?$/);
         if(route){
           const sub=authenticate(req,route[1]);
-          if(req.method==='GET'&&!route[2])return json(res,200,{settings:sub.settings,lastSentAt:sub.lastSentAt,lastError:sub.lastError});
+          if(req.method==='GET'&&!route[2])return json(res,200,{settings:sub.settings,lastSentAt:sub.lastSentAt,lastError:sub.lastError,lastTest:sub.lastTest?{id:sub.lastTest.id,sentAt:sub.lastTest.sentAt,receivedAt:sub.lastTest.receivedAt||null,displayed:sub.lastTest.displayed??null}:null});
           if(req.method==='PUT'&&!route[2]){const data=await body(req),settings=sanitizeSettings(data.settings);if(!settings.regions.length)throw error('알림 지역을 선택해 주세요.');if(data.subscription&&(!validSubscription(data.subscription)||Object.values(store.state.subscriptions).some(s=>s.id!==sub.id&&s.subscription.endpoint===data.subscription.endpoint)))throw error('유효하지 않은 알림 연결입니다.');await store.update(s=>{s.subscriptions[sub.id].settings=settings;if(data.subscription)s.subscriptions[sub.id].subscription={endpoint:data.subscription.endpoint,keys:{p256dh:data.subscription.keys.p256dh,auth:data.subscription.keys.auth}};if(!settings.enabled)s.outbox.filter(o=>o.subscriptionId===sub.id&&o.status==='pending').forEach(o=>o.status='cancelled');});return json(res,200,{settings});}
           if(req.method==='DELETE'&&!route[2]){await store.update(s=>{delete s.subscriptions[sub.id];s.outbox=s.outbox.filter(o=>o.subscriptionId!==sub.id);});return json(res,200,{ok:true});}
           if(req.method==='POST'&&route[2]){
             if(sub.testAt&&clock()-Date.parse(sub.testAt)<60000)throw error('테스트 알림은 1분 후 다시 보낼 수 있습니다.',429);
-            await store.update(s=>{s.subscriptions[sub.id].testAt=new Date(clock()).toISOString();});
-            try{await push(sub.subscription,{id:randomUUID(),title:'슬기로운 이직생활',body:'테스트 알림입니다. 새 공고 알림 연결을 확인했어요.',url:'/?settings=1'});}catch{throw error('알림 서비스에 연결하지 못했습니다. 네트워크와 브라우저 권한을 확인해 주세요.',502);}
-            return json(res,200,{ok:true,message:'알림 서비스에 테스트 전송 완료'});
+            const id=randomUUID(),receiptToken=randomBytes(32).toString('base64url');
+            await store.update(s=>{const item=s.subscriptions[sub.id];item.testAt=new Date(clock()).toISOString();item.lastTest={id,tokenHash:hash(receiptToken),sentAt:item.testAt};});
+            try{await push(sub.subscription,{id,title:'슬기로운 이직생활',body:'테스트 알림입니다. 새 공고 알림 연결을 확인해 주세요.',url:'/?settings=1',receipt:{id,token:receiptToken}});}catch{throw error('알림 서비스에 연결하지 못했습니다. 네트워크와 브라우저 권한을 확인해 주세요.',502);}
+            return json(res,200,{ok:true,id,message:'알림 서비스에 테스트 전송 완료'});
           }
         }
         throw error('요청한 기능을 찾을 수 없습니다.',404);
