@@ -30,6 +30,6 @@ test('HTTP feed, private device settings, origin checks, test-push and cancellat
   const received=(await call('/api/subscriptions/'+id,{token})).json();
   assert.ok(received.lastTest.receivedAt);assert.equal(received.lastTest.displayed,true);assert.equal(received.lastTest.tokenHash,undefined);assert.equal(received.lastTest.token,undefined);
   assert.equal((await call('/api/subscriptions/'+id+'/test',{method:'POST',token,data:{}})).status,429);
-  await call('/api/subscriptions/'+id,{method:'PUT',token,data:{settings:{...settings,regions:['서울'],cadence:'daily'}}});assert.deepEqual(app.store.state.subscriptions[id].settings.regions,['서울']);
+  await call('/api/subscriptions/'+id,{method:'PUT',token,data:{settings:{...settings,regions:['서울'],cadence:'daily',employment:'contract'}}});assert.deepEqual(app.store.state.subscriptions[id].settings.regions,['서울']);assert.equal((await call('/api/subscriptions/'+id,{token})).json().settings.employment,'contract');
   assert.equal((await call('/api/subscriptions/'+id,{method:'DELETE',token,data:{}})).status,200);assert.equal(Object.keys(app.store.state.subscriptions).length,0);
 });
